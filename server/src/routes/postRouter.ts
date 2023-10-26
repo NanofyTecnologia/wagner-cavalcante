@@ -1,6 +1,7 @@
+import { Router } from 'express'
+
 import postController from '@/controllers/postController'
 import validateTokenMiddleware from '@/middleware/validateTokenMiddleware'
-import { Router } from 'express'
 
 const postRouter = Router()
 
