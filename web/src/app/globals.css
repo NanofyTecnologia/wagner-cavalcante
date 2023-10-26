@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.tinymce h1, 
+.tinymce h2,
+.tinymce h3,
+.tinymce h4,
+.tinymce h5,
+.tinymce h6 {
+  display: block;
+
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.tinymce h1 {
+  font-size: 2em;
+}
+
+.tinymce h2 {
+  font-size: 1.5em;
+}
+
+.tinymce h3 {
+  font-size: 1.17em;
+} 
+
+.tinymce h5 {
+  font-size: 0.83em;
+}
+
+.tinymce h6 {
+  font-size: 0.67em;
+}
+
+.tinymce p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.tinymce ul,
+.tinymce ol {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.tinymce ol,
+.tinymce li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.tinymce ol li {
+  list-style-type: decimal;
+}
+
+.tinymce ul li {
+  list-style-type: disc;
+}
+
+.tinymce a {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.tinymce blockquote {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.tinymce pre {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.tinymce code {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.tinymce hr {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
