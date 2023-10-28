@@ -2,7 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 import { FaBars } from 'react-icons/fa'
-import { BsPieChartFill, BsChatSquareTextFill } from 'react-icons/bs'
+import {
+  BsPieChartFill,
+  BsChatSquareTextFill,
+  BsFillBriefcaseFill,
+} from 'react-icons/bs'
 
 import Logo from '@/assets/dashboard/logo.png'
 import NavMenu from '../NavMenu'
@@ -29,7 +33,7 @@ export default function DashboardNavigation({
       <div className="flex flex-1">
         <div className="h-full w-60 space-y-3 border-r border-gray-200 bg-white p-4">
           <Link
-            href="dashboard"
+            href="/dashboard"
             className="flex items-center gap-2 rounded-md p-2 hover:bg-gray-200"
           >
             <BsPieChartFill />
@@ -38,7 +42,7 @@ export default function DashboardNavigation({
           </Link>
 
           <NavMenu
-            buttonIcon={<BsChatSquareTextFill />}
+            buttonIcon={<BsChatSquareTextFill className="text-blue-500" />}
             buttonLabel="Postagens"
           >
             <Link
@@ -55,7 +59,10 @@ export default function DashboardNavigation({
             </Link>
           </NavMenu>
 
-          <NavMenu buttonLabel="Empregos">
+          <NavMenu
+            buttonIcon={<BsFillBriefcaseFill className="text-amber-900" />}
+            buttonLabel="Empregos"
+          >
             <Link
               href="/dashboard/listar-empregos"
               className="flex items-center gap-2 rounded-md p-2 hover:bg-gray-200"

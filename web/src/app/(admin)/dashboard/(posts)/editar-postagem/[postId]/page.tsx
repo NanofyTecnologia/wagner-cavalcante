@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { BsUpload } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
@@ -17,35 +18,66 @@ type FieldValues = {
   file?: FileList
   title: string
   content: string
-  published: boolean
+  published: string
 }
 
-export default function CreatePost() {
+type EditPost = {
+  params: {
+    postId: string
+  }
+}
+
+export default function UpdatePost({ params }: EditPost) {
   const router = useRouter()
 
   const { handleSubmit, register, watch, setValue } = useForm<FieldValues>()
 
-  const [preview] = useFilePreview(watch('file'))
+  const [initialContent, setInitialContent] = useState<string>('')
+  const [preview, setPreview] = useFilePreview(watch('file'))
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      const coverURL = await uploadFile(data.file)
+      let coverURL = preview
+      const regexBlob = /^blob:/
 
-      delete data.file
+      if (regexBlob.test(preview)) {
+        coverURL = await uploadFile(data.file)
+      }
 
-      await api.post('/post', {
+      const newData = {
         ...data,
         coverURL,
-        published: Boolean(data.published),
-      })
+        published: data.published === 'true',
+      }
 
-      toast.success('Postagem criada com sucesso!')
+      delete newData.file
+
+      await api.put(`/post/${params.postId}`, newData)
+
+      toast.success('Postagem editada com sucesso!')
 
       router.push('/dashboard/listar-postagens')
     } catch (error) {
       console.log(error)
     }
   }
+
+  const loadingSelectedPost = async () => {
+    try {
+      const response = await api.get(`/post/${params.postId}`)
+
+      const { title, content, coverURL, published } = response.data
+
+      setValue('title', title)
+      setPreview(coverURL)
+      setInitialContent(content)
+      setValue('published', published.toString())
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    loadingSelectedPost()
+  }, [])
 
   return (
     <>
@@ -83,7 +115,12 @@ export default function CreatePost() {
           </div>
 
           <div className="col-span-2">
-            <Editor setContent={setValue} />
+            <Editor
+              content={
+                initialContent || '<p>Escreva o conteúdo de seu blog</p>'
+              }
+              setContent={setValue}
+            />
           </div>
 
           <div className="col-span-2">
@@ -116,7 +153,7 @@ export default function CreatePost() {
               type="submit"
               className="rounded-md bg-blue-500 px-14 py-3 font-bold text-white transition-colors hover:bg-blue-600"
             >
-              Criar postagem
+              Atualizar postagem
             </button>
           </div>
         </form>

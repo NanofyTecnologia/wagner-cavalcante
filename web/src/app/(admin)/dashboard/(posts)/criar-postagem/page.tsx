@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { BsUpload } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
@@ -18,66 +17,35 @@ type FieldValues = {
   file?: FileList
   title: string
   content: string
-  published: string
+  published: boolean
 }
 
-type EditPost = {
-  params: {
-    postId: string
-  }
-}
-
-export default function EditPost({ params }: EditPost) {
+export default function CreatePost() {
   const router = useRouter()
 
   const { handleSubmit, register, watch, setValue } = useForm<FieldValues>()
 
-  const [initalContent, setInitialContent] = useState<string>('')
-  const [preview, setPreview] = useFilePreview(watch('file'))
+  const [preview] = useFilePreview(watch('file'))
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      let coverURL = preview
-      const regexBlob = /^blob:/
+      const coverURL = await uploadFile(data.file)
 
-      if (regexBlob.test(preview)) {
-        coverURL = await uploadFile(data.file)
-      }
+      delete data.file
 
-      const newData = {
+      await api.post('/post', {
         ...data,
         coverURL,
-        published: data.published === 'true',
-      }
+        published: Boolean(data.published),
+      })
 
-      delete newData.file
-
-      await api.put(`/post/${params.postId}`, newData)
-
-      toast.success('Postagem editada com sucesso!')
+      toast.success('Postagem criada com sucesso!')
 
       router.push('/dashboard/listar-postagens')
     } catch (error) {
       console.log(error)
     }
   }
-
-  const loadingSelectedPost = async () => {
-    try {
-      const response = await api.get(`/post/${params.postId}`)
-
-      const { title, content, coverURL, published } = response.data
-
-      setValue('title', title)
-      setPreview(coverURL)
-      setInitialContent(content)
-      setValue('published', published.toString())
-    } catch (error) {}
-  }
-
-  useEffect(() => {
-    loadingSelectedPost()
-  }, [])
 
   return (
     <>
@@ -92,6 +60,7 @@ export default function EditPost({ params }: EditPost) {
             <label htmlFor="title" className="mb-2 block font-bold">
               Título
             </label>
+
             <input
               id="title"
               type="text"
@@ -102,10 +71,11 @@ export default function EditPost({ params }: EditPost) {
           </div>
 
           <div className="col-span-1">
-            <label htmlFor="title" className="mb-2 block font-bold">
+            <label htmlFor="published" className="mb-2 block font-bold">
               Tornar postagem visível?
             </label>
             <select
+              id="published"
               {...register('published')}
               className="w-full rounded-md border border-gray-300 bg-white p-2 outline-blue-500"
             >
@@ -115,7 +85,7 @@ export default function EditPost({ params }: EditPost) {
           </div>
 
           <div className="col-span-2">
-            <Editor content={initalContent} setContent={setValue} />
+            <Editor setContent={setValue} />
           </div>
 
           <div className="col-span-2">
@@ -148,7 +118,7 @@ export default function EditPost({ params }: EditPost) {
               type="submit"
               className="rounded-md bg-blue-500 px-14 py-3 font-bold text-white transition-colors hover:bg-blue-600"
             >
-              Atualizar postagem
+              Criar postagem
             </button>
           </div>
         </form>

@@ -22,7 +22,11 @@ export default function NavMenu({
         onClick={toggleShowDropdown}
         className="flex w-full items-center gap-2 rounded-md p-2 hover:bg-gray-200"
       >
-        {buttonIcon && buttonIcon}
+        {buttonIcon && (
+          <span className='text-xl'>
+            {buttonIcon}
+          </span>
+        )}
 
         <span className="ml-2 block">{buttonLabel}</span>
 

@@ -1,10 +1,11 @@
 'use client'
 
-import { api } from '@/lib/axios'
 import Link from 'next/link'
 import { useState } from 'react'
-import { BiSolidEditAlt, BiSolidTrashAlt, BiX } from 'react-icons/bi'
 import { toast } from 'react-toastify'
+import { BiSolidEditAlt, BiSolidTrashAlt, BiX } from 'react-icons/bi'
+
+import { api } from '@/lib/axios'
 
 type Post = {
   id: string
@@ -36,7 +37,7 @@ export default function Actions({ post, onLoadingPost }: ActionsProps) {
   }
 
   return (
-    <td>
+    <>
       <div className="flex items-center gap-4">
         <Link
           href={`/dashboard/editar-postagem/${post.id}`}
@@ -91,6 +92,6 @@ export default function Actions({ post, onLoadingPost }: ActionsProps) {
           </div>
         </div>
       )}
-    </td>
+    </>
   )
 }

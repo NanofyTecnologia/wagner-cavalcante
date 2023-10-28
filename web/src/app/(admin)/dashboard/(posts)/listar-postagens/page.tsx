@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 
 import { api } from '@/lib/axios'
 import Container from '@/app/(admin)/components/Container'
-import Actions from '@/app/(admin)/components/Actions'
+import Actions from './components/Actions'
 
 type Post = {
   id: string
@@ -68,9 +68,6 @@ export default function ListPost() {
                 Conteúdo
               </th>
               <th scope="col" className="p-2 text-start">
-                Publicado
-              </th>
-              <th scope="col" className="p-2 text-start">
                 Criado em
               </th>
               <th scope="col" className="p-2 text-start">
@@ -114,14 +111,15 @@ export default function ListPost() {
                     Ver conteúdo
                   </button>
                 </td>
-                <td className="p-2">{post.published ? 'Sim' : 'Não'}</td>
                 <td className="p-2">
-                  {dayjs(post.createdAt).format('DD/MM/YYYY')}
+                  {dayjs(post.createdAt).format('DD/MM/YYYY - HH:mm')}
                 </td>
                 <td className="p-2">
-                  {dayjs(post.updatedAt).format('DD/MM/YYYY')}
+                  {dayjs(post.updatedAt).format('DD/MM/YYYY - HH:mm')}
                 </td>
-                <Actions post={post} onLoadingPost={loadingPosts} />
+                <th>
+                  <Actions post={post} onLoadingPost={loadingPosts} />
+                </th>
               </tr>
             ))}
           </tbody>

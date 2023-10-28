@@ -1,12 +1,17 @@
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /web
 
 COPY package*.json ./
+COPY tsconfig.json ./
 
-COPY . ./app
+COPY . ./web
 
 RUN npm install
+
+RUN npm install -g next@latest react@latest react-dom@latest
+
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
 
