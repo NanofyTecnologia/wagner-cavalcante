@@ -24,6 +24,16 @@ async function getJobs(req: Request, res: Response) {
   }
 }
 
+async function getPublishedJobs(req: Request, res: Response) {
+  try {
+    const jobs = await jobServices.getPublishedJobs()
+
+    res.status(200).send(jobs)
+  } catch (error) {
+    sendError(res, error)
+  }
+}
+
 async function createJob(req: Request, res: Response) {
   try {
     const { body } = req
@@ -67,4 +77,5 @@ export default {
   createJob,
   updateJob,
   deleteJob,
+  getPublishedJobs,
 }

@@ -9,6 +9,10 @@ async function getJobs() {
   return await jobsRepository.findAll()
 }
 
+async function getPublishedJobs() {
+  return await jobsRepository.findAllPublished()
+}
+
 async function createJob(data: JobData) {
   return await jobsRepository.create(data)
 }
@@ -27,4 +31,5 @@ export default {
   createJob,
   updateJob,
   deleteJob,
+  getPublishedJobs,
 }

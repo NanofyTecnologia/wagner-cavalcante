@@ -36,10 +36,19 @@ function findById(jobId: string) {
   })
 }
 
+function findAllPublished() {
+  return prisma.job.findMany({
+    where: {
+      published: true,
+    },
+  })
+}
+
 export default {
   create,
   update,
   destroy,
   findAll,
   findById,
+  findAllPublished,
 }
