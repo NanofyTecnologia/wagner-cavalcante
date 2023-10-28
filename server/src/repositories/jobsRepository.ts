@@ -28,9 +28,18 @@ function findAll() {
   return prisma.job.findMany()
 }
 
+function findById(jobId: string) {
+  return prisma.job.findUnique({
+    where: {
+      id: jobId,
+    },
+  })
+}
+
 export default {
   create,
   update,
   destroy,
   findAll,
+  findById,
 }

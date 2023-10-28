@@ -1,6 +1,10 @@
 import jobsRepository from '@/repositories/jobsRepository'
 import { JobData } from '@/types/jobsTypes'
 
+async function getJob(jobId: string) {
+  return await jobsRepository.findById(jobId)
+}
+
 async function getJobs() {
   return await jobsRepository.findAll()
 }
@@ -18,6 +22,7 @@ async function deleteJob(jobId: string) {
 }
 
 export default {
+  getJob,
   getJobs,
   createJob,
   updateJob,

@@ -2,6 +2,18 @@ import { Request, Response } from 'express'
 import jobServices from '@/services/jobServices'
 import sendError from '@/utils/sendError'
 
+async function getJob(req: Request, res: Response) {
+  try {
+    const { jobId } = req.params
+
+    const job = await jobServices.getJob(jobId)
+
+    res.status(200).send(job)
+  } catch (error) {
+    sendError(res, error)
+  }
+}
+
 async function getJobs(req: Request, res: Response) {
   try {
     const jobs = await jobServices.getJobs()
@@ -50,6 +62,7 @@ async function deleteJob(req: Request, res: Response) {
 }
 
 export default {
+  getJob,
   getJobs,
   createJob,
   updateJob,

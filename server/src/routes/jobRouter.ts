@@ -6,6 +6,7 @@ import validateTokenMiddleware from '@/middleware/validateTokenMiddleware'
 const jobRouter = Router()
 
 jobRouter
+  .get('/:jobId', jobController.getJob)
   .get('/', jobController.getJobs)
   .post('/', validateTokenMiddleware, jobController.createJob)
   .put('/:jobId', validateTokenMiddleware, jobController.updateJob)
