@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '@/lib/axios'
 import Container from '@/components/Container'
 import Accordion from '@/components/Accordion'
-import { BsBuildingFill, BsFillPinMapFill, BsMapFill } from 'react-icons/bs'
+import { BsBuildingFill, BsFillPinMapFill } from 'react-icons/bs'
 
 type Job = {
   id: string
@@ -54,7 +54,10 @@ export default function Job() {
                   <BsFillPinMapFill /> {job.location}
                 </span>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: job.description }} />
+              <div
+                className="tinymce"
+                dangerouslySetInnerHTML={{ __html: job.description }}
+              />
             </Accordion>
           ))}
         </Container>

@@ -22,7 +22,7 @@ export default function Login() {
       const response = await api.post('/sign-in', data)
 
       setCookie(null, 'token', response.data.token, {
-        maxAge: 60 * 60 * 24 * 30, // 30 days
+        maxAge: 60 * 60 * 24 * 30,
         path: '/',
       })
 
