@@ -8,9 +8,9 @@ import router from './routes'
 const app = express()
 
 app.use(
-  cors({
+  cors(/* {
     origin: 'http://localhost:3000',
-  }),
+  } */),
 )
 
 app.use(fileUpload({ createParentPath: true }))
