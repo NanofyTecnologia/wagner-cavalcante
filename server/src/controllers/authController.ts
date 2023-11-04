@@ -14,6 +14,32 @@ async function signInUser(req: Request, res: Response) {
   }
 }
 
+async function resetPassword(req: Request, res: Response) {
+  try {
+    const { body, params } = req
+
+    await authServices.resetPassword(params.token, body.password)
+
+    res.sendStatus(200)
+  } catch (error) {
+    sendError(res, error)
+  }
+}
+
+async function sendEmailToResetPassword(req: Request, res: Response) {
+  try {
+    const { body } = req
+
+    await authServices.sendEmailToResetPassword(body.email)
+
+    res.sendStatus(200)
+  } catch (error) {
+    sendError(res, error)
+  }
+}
+
 export default {
   signInUser,
+  resetPassword,
+  sendEmailToResetPassword,
 }
