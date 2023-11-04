@@ -8,7 +8,7 @@ import { SessionProvider } from '@/context/SessionContext'
 export default function Provider({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position="bottom-center" />
       {children}
     </SessionProvider>
   )

@@ -1,6 +1,7 @@
 import { api } from '@/lib/axios'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { BsX } from 'react-icons/bs'
+import { Oval } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
 
 type ModalRecoverPasswordProps = {
@@ -16,7 +17,11 @@ export default function ModalRocoverPassword({
   show,
   toggleShow,
 }: ModalRecoverPasswordProps) {
-  const { handleSubmit, register } = useForm<FieldValues>()
+  const {
+    handleSubmit,
+    register,
+    formState: { isSubmitting },
+  } = useForm<FieldValues>()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
@@ -25,6 +30,7 @@ export default function ModalRocoverPassword({
       await api.post('/send-email/reset-password', { email })
 
       toast.success('E-mail enviado com sucesso!')
+      toggleShow()
     } catch (error) {
       toast.error('Erro ao enviar e-mail')
     }
@@ -58,10 +64,29 @@ export default function ModalRocoverPassword({
                   placeholder="E-mail"
                   {...register('email')}
                   className="mb-4 w-full rounded-md border border-neutral-300 bg-neutral-100 p-3 outline-blue-500"
+                  disabled={isSubmitting}
                 />
 
-                <button className="w-full rounded-md bg-blue-500 p-3 font-semibold uppercase text-white hover:bg-blue-600">
-                  Enviar
+                <button
+                  className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold uppercase text-white hover:bg-blue-600 disabled:bg-blue-300"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <Oval
+                      height={24}
+                      width={24}
+                      color="#ffffff"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                      visible={true}
+                      ariaLabel="oval-loading"
+                      secondaryColor="#ffffff"
+                      strokeWidth={2}
+                      strokeWidthSecondary={2}
+                    />
+                  ) : (
+                    'Enviar'
+                  )}
                 </button>
               </form>
 
