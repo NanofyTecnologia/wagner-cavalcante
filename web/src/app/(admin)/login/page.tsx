@@ -6,7 +6,9 @@ import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { api } from '@/lib/axios'
+import useToggle from '@/hooks/useToggle'
 import LayoutImage from '@/assets/dashboard/images/bg_login_1.jpg'
+import ModalRocoverPassword from '../components/ModalRecoverPassword'
 
 type FieldValues = {
   email: string
@@ -16,6 +18,8 @@ type FieldValues = {
 export default function Login() {
   const router = useRouter()
   const { handleSubmit, register } = useForm<FieldValues>()
+
+  const [showDropdown, toggleShowDropdown, elementRef, buttonRef] = useToggle()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
@@ -68,7 +72,7 @@ export default function Login() {
                   >
                     Senha
                   </label>
-                  <div className="relative mb-6 flex items-center">
+                  <div className="relative flex items-center">
                     <input
                       id="password"
                       type="password"
@@ -77,6 +81,13 @@ export default function Login() {
                       className="w-full rounded-md border border-gray-200 bg-gray-50 p-2 outline-blue-500"
                     />
                   </div>
+                  <button
+                    type="button"
+                    onClick={toggleShowDropdown}
+                    className="mb-6 mt-3 block text-blue-500 hover:underline"
+                  >
+                    Esqueceu sua senha?
+                  </button>
 
                   <button
                     type="submit"
@@ -90,6 +101,13 @@ export default function Login() {
           </div>
         </div>
       </main>
+
+      {showDropdown && (
+        <ModalRocoverPassword
+          show={showDropdown}
+          toggleShow={toggleShowDropdown}
+        />
+      )}
     </>
   )
 }

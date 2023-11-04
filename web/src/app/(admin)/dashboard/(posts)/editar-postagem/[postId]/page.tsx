@@ -7,9 +7,9 @@ import { BsUpload } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import useFilePreview from '@/hooks/useFilePreview'
-import uploadFile from '@/utils/uploadFile'
 import { api } from '@/lib/axios'
+import uploadFile from '@/utils/uploadFile'
+import useFilePreview from '@/hooks/useFilePreview'
 
 import Editor from '@/app/(admin)/components/Editor'
 import Container from '@/app/(admin)/components/Container'

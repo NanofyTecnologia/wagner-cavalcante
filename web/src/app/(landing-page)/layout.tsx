@@ -26,7 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${italiana.variable} ${garamond.variable}`}>
+      <body
+        className={`${italiana.variable} ${garamond.variable} bg-secondary`}
+      >
         {children}
       </body>
     </html>
