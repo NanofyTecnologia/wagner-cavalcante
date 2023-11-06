@@ -1,5 +1,6 @@
-import jwt from 'jsonwebtoken'
-import { compareSync } from 'bcrypt'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+import { compareSync, hashSync } from 'bcrypt'
+import nodemailer from 'nodemailer'
 import { SignInData } from '@/types/userTypes'
 import { httpResponse } from '@/utils/httpResponse'
 import userRepository from '@/repositories/userRepository'
@@ -15,14 +16,50 @@ async function signInUser(data: SignInData) {
 
   const isFirstLogin = await checkIsFirstLogin(user.createdAt, user.updatedAt)
 
-  const token = await generateToken({ id })
+  const token = await generateToken({ id, isLogged: true })
 
   return { name, email, isFirstLogin, token }
 }
 
-async function generateToken(payload: any) {
+async function sendEmailToResetPassword(email: string) {
+  const user = await validateEmailExistsOrFail(email)
+
+  const token = await generateToken({ id: user.id, isLogged: false }, '5m')
+
+  const body = `Olá, ${user.name}! Para redefinir sua senha, clique no link abaixo: <br> <a href="${process.env.APP_URL}/login/recuperar-senha/${token}">Redefinir senha</a>`
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.AUTH_USER,
+      pass: process.env.AUTH_PASS,
+    },
+  })
+
+  const info = await transporter.sendMail({
+    from: process.env.AUTH_USER,
+    to: email,
+    subject: 'Redefinição de senha',
+    html: body,
+  })
+
+  console.log('Message sent: %s', info.messageId)
+}
+
+async function resetPassword(token: string, password: string) {
+  const decoded = jwt.verify(
+    token,
+    process.env.JWT_SECRET as string,
+  ) as JwtPayload
+
+  const hashedPassword = hashSync(password, 10)
+
+  await userRepository.update(decoded.id, { password: hashedPassword })
+}
+
+async function generateToken(payload: any, expiresIn?: string) {
   const token = jwt.sign(payload, process.env.JWT_SECRET as string, {
-    expiresIn: '30d',
+    expiresIn: expiresIn || '30d',
   })
 
   return token
@@ -56,4 +93,6 @@ async function validateEmailExistsOrFail(email: string) {
 
 export default {
   signInUser,
+  resetPassword,
+  sendEmailToResetPassword,
 }

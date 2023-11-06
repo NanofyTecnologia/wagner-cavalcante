@@ -19,6 +19,10 @@ export default function validateTokenMiddleware(
       process.env.JWT_SECRET as string,
     ) as JwtPayload
 
+    if (!decoded.isLogged) {
+      throw new Error('Token inválido')
+    }
+
     res.locals.userId = decoded.id
 
     next()
