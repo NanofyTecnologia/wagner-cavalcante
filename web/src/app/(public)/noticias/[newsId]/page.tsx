@@ -25,7 +25,7 @@ type News = {
   published: boolean
 }
 
-const posts = {
+const posts: any = {
   'b67a0b99-14a6-4608-942f-85333a508114': {
     id: 'b67a0b99-14a6-4608-942f-85333a508114',
     title: 'A Importância do Versionamento de Código',
