@@ -21,19 +21,46 @@ type Job = {
 }
 
 export default function Job() {
-  const [jobs, setJobs] = useState<Job[]>([])
+  const [jobs, setJobs] = useState<Job[]>([
+    {
+      id: 'a7a56f38-29c5-4458-b733-4f20323318ab',
+      title: 'Desenvolvedor Frontend II',
+      description:
+        '<p>Buscamos um desenvolvedor Full Stack com conhecimentos em React, Next.js, Tailwind CSS, Docker, Node.js e PostgreSQL para integrar nossa equipe. Sua fun&ccedil;&atilde;o ser&aacute; criar solu&ccedil;&otilde;es inovadoras para nossos produtos e plataformas.</p>',
+      salary: 4200,
+      company: 'Nanofy Tecnologia',
+      location: 'São Carlos',
+      link: '',
+      published: true,
+      createdAt: '2023-10-27T20:51:19.508Z',
+      updatedAt: '2023-10-28T16:35:46.699Z',
+    },
+    {
+      id: 'f5bb6cc7-bc50-42f5-aba7-92b059d20ce7',
+      title: 'Desenvolvedor Full Stack',
+      description:
+        '<p>&nbsp;&bull; Front-end: React, NextJs, JavaScript, HTML, CSS, TypeScript, SASS<br>&nbsp;&bull; Back-end: NodeJs, TypeScript, PHP, ExpressJS, Restful API, MongoDB, PostgreSQL, MySQL, SQL<br>&nbsp;&bull; Infraestrutura: Docker, AWS<br>&nbsp;&bull; Arquitetura: ORM, Prisma, Layered Architecture (Arquitetura em camadas), Micro-Frontend<br>&nbsp;&bull; Ferramentas: Trello, Asana, Figma, Notion, Slack, Discord, Git, Github</p>',
+      salary: 5000,
+      company: 'Nanofy Tecnologia',
+      location: 'Remoto',
+      link: '',
+      published: true,
+      createdAt: '2023-10-29T02:46:07.574Z',
+      updatedAt: '2023-10-29T02:46:07.574Z',
+    },
+  ])
 
-  const loadingJobs = async () => {
-    try {
-      const response = await api.get('/job/published')
+  // const loadingJobs = async () => {
+  //   try {
+  //     const response = await api.get('/job/published')
 
-      setJobs(response.data)
-    } catch (error) {}
-  }
+  //     setJobs(response.data)
+  //   } catch (error) {}
+  // }
 
-  useEffect(() => {
-    loadingJobs()
-  }, [])
+  // useEffect(() => {
+  //   loadingJobs()
+  // }, [])
 
   return (
     <>
