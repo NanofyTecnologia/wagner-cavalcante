@@ -1,17 +1,20 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-
 import Image from 'next/image'
-import logo from '@/assets/images/logo.jpg'
-
-import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
 import { usePathname } from 'next/navigation'
+import React, { useEffect, useRef, useState } from 'react'
+import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
+
+import logo from '@/assets/images/logo.jpg'
+import useToggle from '@/hooks/useToggle'
+import { BiX } from 'react-icons/bi'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showModal, toggleShow, elementRef, buttonRef] = useToggle()
   const [windowScrolled, setWindowScrolled] = useState<boolean>(false)
+
   const pathName = usePathname()
   const menuRef = useRef<HTMLDivElement | null>(null)
 
@@ -121,13 +124,12 @@ export default function Navbar() {
           </div>
 
           <div className="invisible sm:visible">
-            <Link
-              href={'/login'}
+            <button
+              onClick={toggleShow}
               className="cursor-pointer rounded-md border-2 bg-transparent px-3 py-1 text-white hover:bg-white hover:text-black"
-              rel=""
             >
               Login
-            </Link>
+            </button>
           </div>
 
           <div className="relative sm:hidden">
@@ -175,6 +177,7 @@ export default function Navbar() {
                     <Link href={'/login'} rel="">
                       <div className="py-3 text-lg text-amber-800">Login</div>
                     </Link>
+                    <button></button>
                   </li>
                 </ul>
               </div>
@@ -182,6 +185,50 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {showModal && (
+        <div className="fixed left-0 top-0 z-50 h-full w-full overflow-hidden bg-black/60">
+          <div className="mx-auto flex h-full w-full max-w-md items-center justify-center">
+            <div className="w-full rounded-md bg-white p-6" ref={elementRef}>
+              <div className="mb-4 flex items-center justify-between text-neutral-600">
+                <h1 className="text-2xl">Entrar na plataforma</h1>
+
+                <button
+                  onClick={toggleShow}
+                  className="rounded-full p-2 text-2xl hover:bg-neutral-100"
+                >
+                  <BiX />
+                </button>
+              </div>
+              <form
+                name="form"
+                method="post"
+                className="space-y-4"
+                target="_blank"
+                action="https://www.siteadv.com.br/mmcadvs/ExternalLogin.aspx?id=8863"
+              >
+                <input
+                  type="text"
+                  name="login"
+                  placeholder="Usuário"
+                  className="block w-full rounded-md border border-neutral-300 bg-neutral-200 p-3 outline-none focus:border-primary"
+                />
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder="Senha"
+                  className="block w-full rounded-md border border-neutral-300 bg-neutral-200 p-3 outline-none focus:border-primary"
+                />
+                <input
+                  type="submit"
+                  value="Entrar"
+                  className="w-full cursor-pointer rounded-md bg-blue-500 p-3 text-white hover:bg-blue-600"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

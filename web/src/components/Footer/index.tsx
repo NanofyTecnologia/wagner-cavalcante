@@ -15,6 +15,7 @@ export default function Footer() {
             <div className="text-center">
               <h5 className="mb-2 font-bold text-white">
                 Monte & Cavalcante Advogados
+                <span className="block font-normal">52.743.726/0001-18</span>
               </h5>
               <p className="mt-4">
                 Navegue pelo nosso site e encontre soluções para suas
@@ -73,9 +74,10 @@ export default function Footer() {
                     className="hover:underline"
                     href="https://www.instagram.com/monteecavalcante.adv"
                     target="_blank"
+                    prefetch={false}
                     rel="noreferrer noopener"
                   >
-                    Instagram
+                    monteecavalcante.adv
                   </Link>
                 </li>
                 <li>(82) 3435-2031</li>
@@ -87,6 +89,16 @@ export default function Footer() {
                     rel="noreferrer noopener"
                   >
                     (82) 99668-0662
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="hover:underline"
+                    href="https://wa.me/82999355766"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    (82) 99935-5766
                   </Link>
                 </li>
               </ul>
