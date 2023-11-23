@@ -25,7 +25,6 @@ type News = {
   published: boolean
 }
 
-
 export default function NewsContent({ params }: NewsContentProps) {
   const { newsId } = params
 
