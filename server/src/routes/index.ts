@@ -1,5 +1,6 @@
 import { Router } from 'express'
 
+import jobRouter from './jobRouter'
 import authRouter from './authRouter'
 import jobRouter from './jobRouter'
 import userRouter from './userRouter'

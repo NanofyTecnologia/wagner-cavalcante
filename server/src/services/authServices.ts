@@ -16,7 +16,7 @@ async function signInUser(data: SignInData) {
 
   const isFirstLogin = await checkIsFirstLogin(user.createdAt, user.updatedAt)
 
-  const token = await generateToken({ id, isLogged: true })
+  const token = await generateToken({ id })
 
   return { name, email, isFirstLogin, token }
 }
@@ -26,7 +26,7 @@ async function sendEmailToResetPassword(email: string) {
 
   const token = await generateToken({ id: user.id, isLogged: false }, '5m')
 
-  const body = `Olá, ${user.name}! Para redefinir sua senha, clique no link abaixo: <br> <a href="${process.env.APP_URL}/login/recuperar-senha/${token}">Redefinir senha</a>`
+  const body = `Olá, ${user.name}! Para redefinir sua senha, clique no link abaixo: <br> <a href="https://monteecavalcante.adv.br/login/recuperar-senha/${token}">Redefinir senha</a>`
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -42,8 +42,6 @@ async function sendEmailToResetPassword(email: string) {
     subject: 'Redefinição de senha',
     html: body,
   })
-
-  console.log('Message sent: %s', info.messageId)
 }
 
 async function resetPassword(token: string, password: string) {
