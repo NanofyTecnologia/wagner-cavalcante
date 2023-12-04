@@ -30,6 +30,7 @@ function findById(id: string) {
     select: {
       name: true,
       email: true,
+      password: true,
     },
   })
 }

@@ -8,5 +8,6 @@ userRouter
   .all('*', validateTokenMiddleware)
   .post('/', userController.createUser)
   .get('/', userController.getUserById)
+  .put('/change-password', userController.changePassword)
 
 export default userRouter

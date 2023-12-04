@@ -4,8 +4,10 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { BsX } from 'react-icons/bs'
 import { BiSolidUserCircle, BiShowAlt, BiHide } from 'react-icons/bi'
 import { Oval } from 'react-loader-spinner'
+import { toast } from 'react-toastify'
 
 import useToggle from '@/hooks/useToggle'
+import { api } from '@/lib/axios'
 
 type FieldValues = {
   currentPassword: string
@@ -25,8 +27,20 @@ export default function Profile() {
     formState: { isSubmitting },
   } = useForm<FieldValues>()
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    try {
+      if (data.newPassword !== data.confirmPassword) {
+        toast.warn('As senhas não coincidem')
+      }
+
+      await api.put('/user/change-password', data)
+
+      toast.success('Senha alterada com sucesso')
+
+      toggleShowModal()
+    } catch (error: any) {
+      toast.error(error.response.data || 'Houve um erro ao atualizar sua senha')
+    }
   }
 
   const handleOpen = () => toggleShowModal()

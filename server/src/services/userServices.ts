@@ -3,6 +3,7 @@ import { hashSync } from 'bcrypt'
 import { UserData } from '@/types/userTypes'
 import { httpResponse } from '@/utils/httpResponse'
 import userRepository from '@/repositories/userRepository'
+import authServices from './authServices'
 
 async function createUser(data: UserData) {
   const { email, password } = data
@@ -26,7 +27,9 @@ async function getUserById(id: string) {
     throw httpResponse('notFound', 'Usuário não encontrado')
   }
 
-  return user
+  const { password: _, ...userWithoutPassword } = user
+
+  return userWithoutPassword
 }
 
 async function validateEmailExistsOrFail(email: string) {
@@ -39,7 +42,29 @@ async function validateEmailExistsOrFail(email: string) {
   return user
 }
 
+type ChangePasswordData = {
+  currentPassword: string
+  newPassword: string
+}
+
+async function changePassword(userId: string, data: ChangePasswordData) {
+  const { currentPassword, newPassword } = data
+
+  const user = await userRepository.findById(userId)
+
+  if (!user) {
+    throw httpResponse('notFound', 'Usuário não encontrado')
+  }
+
+  await authServices.validatePasswordOrFail(currentPassword, user.password)
+
+  const hashedPassword = hashSync(newPassword, 10)
+
+  await userRepository.update(userId, { password: hashedPassword })
+}
+
 export default {
   createUser,
   getUserById,
+  changePassword,
 }

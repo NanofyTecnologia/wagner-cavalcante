@@ -36,7 +36,7 @@ async function sendEmailToResetPassword(email: string) {
     },
   })
 
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: process.env.AUTH_USER,
     to: email,
     subject: 'Redefinição de senha',
@@ -93,4 +93,5 @@ export default {
   signInUser,
   resetPassword,
   sendEmailToResetPassword,
+  validatePasswordOrFail,
 }

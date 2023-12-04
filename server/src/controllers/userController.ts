@@ -26,7 +26,21 @@ async function getUserById(req: Request, res: Response) {
   }
 }
 
+async function changePassword(req: Request, res: Response) {
+  try {
+    const { body } = req
+    const { userId } = res.locals
+
+    await userServices.changePassword(userId, body)
+
+    res.status(200).send('Senha alterada com sucesso')
+  } catch (error) {
+    sendError(res, error)
+  }
+}
+
 export default {
   createUser,
   getUserById,
+  changePassword,
 }
