@@ -1,12 +1,35 @@
 'use client'
 
-import { BiSolidUserCircle, BiX } from 'react-icons/bi'
-import React, { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { BsX } from 'react-icons/bs'
+import { BiSolidUserCircle, BiShowAlt, BiHide } from 'react-icons/bi'
+import { Oval } from 'react-loader-spinner'
+
+import useToggle from '@/hooks/useToggle'
+
+type FieldValues = {
+  currentPassword: string
+  newPassword: string
+  confirmPassword: string
+}
 
 export default function Profile() {
-  const [open, setOpen] = useState(false)
+  const [showModal, toggleShowModal, elementRef] = useToggle()
 
-  const handleOpen = () => setOpen(!open)
+  const [showNewPassword, setShowNewPassword] = useToggle()
+  const [showConfirmPassword, setShowConfirmPassword] = useToggle()
+
+  const {
+    handleSubmit,
+    register,
+    formState: { isSubmitting },
+  } = useForm<FieldValues>()
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log(data)
+  }
+
+  const handleOpen = () => toggleShowModal()
   return (
     <>
       <div className="flex h-full items-center justify-center">
@@ -25,63 +48,106 @@ export default function Profile() {
         </div>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 flex h-full w-full items-start justify-center bg-black/40 py-16">
-          <div className="w-full max-w-2xl rounded-md bg-white">
-            <div className="px-4 pt-4 text-end">
-              <button
-                onClick={() => setOpen(false)}
-                className="rounded-md bg-gray-200 p-1 text-2xl transition-colors hover:bg-gray-300"
-              >
-                <BiX />
-              </button>
-            </div>
+      {showModal && (
+        <div className="absolute left-0 top-0 h-full w-full bg-black/75">
+          <div className="m-auto flex h-full max-w-md items-center">
+            <div className="w-full rounded-md bg-white shadow" ref={elementRef}>
+              <h2 className="flex items-center justify-between p-4 font-semibold uppercase text-neutral-400">
+                Atualizar senha
+                <button onClick={() => toggleShowModal()}>
+                  <BsX className="text-3xl hover:text-neutral-500" />
+                </button>
+              </h2>
 
-            <form>
-              <div className="flex flex-col items-center justify-center gap-6 p-4 text-neutral-500">
-                <h4 className="text-xl">Informe os dados abaixo:</h4>
-                <div className="mt-2 flex flex-col items-end gap-5">
-                  <div>
-                    <span className="mr-1">Senha atual:</span>
-                    <input
-                      type="password"
-                      className="rounded-md border border-primary py-1 pl-1 text-black outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <span className="mr-1">Senha nova:</span>
-                    <input
-                      type="password"
-                      className="rounded-md border border-primary py-1 pl-1 text-black outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <span className="mr-1">Repetir senha:</span>
-                    <input
-                      type="password"
-                      className="rounded-md border border-primary py-1 pl-1 text-black outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4 flex items-center justify-center gap-6">
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="rounded-md border border-gray-300 p-2 hover:border-gray-500 hover:text-gray-500"
+              <div className="px-4 pb-4">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <label
+                    htmlFor="currentPassword"
+                    className="mb-2 block text-neutral-400"
                   >
-                    Cancelar
-                  </button>
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="rounded-md border border-rangoon bg-rangoon p-2 text-white hover:bg-rangoon/90"
+                    Digite sua senha atual
+                  </label>
+                  <input
+                    id="currentPassword"
+                    type="password"
+                    autoComplete="off"
+                    placeholder="Senha atual"
+                    {...register('currentPassword')}
+                    className="mb-8 w-full rounded-md border border-neutral-300 bg-neutral-100 p-3 outline-blue-500"
+                    disabled={isSubmitting}
+                  />
+
+                  <label
+                    htmlFor="newPassword"
+                    className="mb-2 block text-neutral-400"
                   >
-                    Alterar
+                    Digite sua nova senha
+                  </label>
+
+                  <div className="relative mb-4 flex items-center">
+                    <input
+                      id="newPassword"
+                      type={showNewPassword ? 'text' : 'password'}
+                      autoComplete="off"
+                      placeholder="Nova senha"
+                      {...register('newPassword')}
+                      className="w-full rounded-md border border-neutral-300 bg-neutral-100 p-3 outline-blue-500"
+                      disabled={isSubmitting}
+                    />
+
+                    <button
+                      type="button"
+                      onClick={setShowNewPassword}
+                      className="absolute right-2 text-3xl text-neutral-600 hover:text-neutral-600/60"
+                    >
+                      {showNewPassword ? <BiHide /> : <BiShowAlt />}
+                    </button>
+                  </div>
+
+                  <div className="relative mb-4 flex items-center">
+                    <input
+                      id="confirmPassword"
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      autoComplete="off"
+                      placeholder="Confirme sua nova senha"
+                      {...register('confirmPassword')}
+                      className="w-full rounded-md border border-neutral-300 bg-neutral-100 p-3 outline-blue-500"
+                      disabled={isSubmitting}
+                    />
+
+                    <button
+                      type="button"
+                      onClick={setShowConfirmPassword}
+                      className="absolute right-2 text-3xl text-neutral-600 hover:text-neutral-600/60"
+                    >
+                      {showConfirmPassword ? <BiHide /> : <BiShowAlt />}
+                    </button>
+                  </div>
+
+                  <button
+                    className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold uppercase text-white hover:bg-blue-600 disabled:bg-blue-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <Oval
+                        height={24}
+                        width={24}
+                        color="#ffffff"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        ariaLabel="oval-loading"
+                        secondaryColor="#ffffff"
+                        strokeWidth={2}
+                        strokeWidthSecondary={2}
+                      />
+                    ) : (
+                      'Enviar'
+                    )}
                   </button>
-                </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       )}

@@ -1,40 +1,30 @@
 version: "3"
 services:
-  # web:
-  #   container_name: web
-  #   build: ./web
-  #   ports:
-  #     - "3000:3000"
-  #   volumes:
-  #     - ./web:/web
-  #   env_file:
-  #     - ./web/.env
-  #   depends_on:
-  #     - server
   server:
     container_name: server
     build: ./server
-    ports: 
-      - "8080:5000"
+    ports:
+      - "8080:443"
     depends_on:
       - db
     volumes:
       - ./server:/server
-    env_file: 
+      - ./server/certificados:/server/certificados
+    env_file:
       - ./server/.env
   db:
     image: postgres:13
     container_name: db
     ports:
       - 2345:5432
-    env_file: 
+    env_file:
       - ./server/.env
     restart: always
-    volumes: 
+    volumes:
       - postgres:/var/lib/postgresql/data
   nginx:
-    container_name: nginx
     build: ./nginx
+    container_name: nginx
     ports:
       - "80:80"
       - "443:443"
