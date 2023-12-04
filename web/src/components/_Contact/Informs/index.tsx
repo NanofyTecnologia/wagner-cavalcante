@@ -45,13 +45,23 @@ export default function Informs() {
                   <span className="block font-bold">Fixo</span>(82) 3435-2031
                 </li>
                 <li>
-                  <span className="block font-bold">Whatsapp</span>
+                  <span className="block font-bold">Whatsapp Wagner</span>
                   <Link
                     className="hover:text-primary hover:underline"
                     href="https://wa.me/82996680662"
                     target="_blank"
                   >
                     (82) 99668-0662
+                  </Link>
+                </li>
+                <li>
+                  <span className="block font-bold">Whatsapp Samuel</span>
+                  <Link
+                    className="hover:text-primary hover:underline"
+                    href="https://wa.me/82999355766"
+                    target="_blank"
+                  >
+                    (82) 99935-5766
                   </Link>
                 </li>
               </ul>
@@ -68,7 +78,7 @@ export default function Informs() {
                   wagner@monteecavalcante.adv.br
                 </li>
                 <li>
-                  <span className="block font-bold">Cicero Monte</span>
+                  <span className="block font-bold">Samuel Monte</span>
                   samuel@monteecavalcante.adv.br
                 </li>
               </ul>

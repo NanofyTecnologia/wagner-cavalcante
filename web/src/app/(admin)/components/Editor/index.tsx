@@ -27,7 +27,7 @@ export default function Editor({
           process.env.NEXT_PUBLIC_WEB_URL + '/tinymce/tinymce.min.js'
         }
         onInit={(evt, editor) => (editorRef.current = editor as any)}
-        initialValue={content || '<p>Escreva o conteúdo de seu blog</p>'}
+        initialValue={content}
         init={{
           height: 500,
           menubar: false,

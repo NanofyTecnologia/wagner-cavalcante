@@ -6,18 +6,15 @@ export default async function middleware(req: NextRequest) {
   if (!token) {
     return NextResponse.redirect(`${process.env.NEXT_PUBLIC_WEB_URL}/login`)
   }
-
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-
     if (!response.ok) {
       return NextResponse.redirect(`${process.env.NEXT_PUBLIC_WEB_URL}/login`)
     }
-
     return NextResponse.next()
   } catch (error) {
     return NextResponse.redirect(`${process.env.NEXT_PUBLIC_WEB_URL}/login`)

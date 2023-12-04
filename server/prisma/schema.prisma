@@ -42,7 +42,7 @@ model Job {
   salary      Int?
   company     String
   location    String
-  link        String
+  link        String?
   published   Boolean @default(false)
 
 

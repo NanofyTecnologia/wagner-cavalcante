@@ -6,7 +6,11 @@ import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { api } from '@/lib/axios'
+import useToggle from '@/hooks/useToggle'
 import LayoutImage from '@/assets/dashboard/images/bg_login_1.jpg'
+import ModalRocoverPassword from '../components/ModalRecoverPassword'
+import { Oval } from 'react-loader-spinner'
+import { toast } from 'react-toastify'
 
 type FieldValues = {
   email: string
@@ -15,20 +19,30 @@ type FieldValues = {
 
 export default function Login() {
   const router = useRouter()
-  const { handleSubmit, register } = useForm<FieldValues>()
+  const {
+    handleSubmit,
+    register,
+    formState: { isSubmitting },
+  } = useForm<FieldValues>()
+
+  const [showDropdown, toggleShowDropdown] = useToggle()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       const response = await api.post('/sign-in', data)
 
       setCookie(null, 'token', response.data.token, {
-        maxAge: 60 * 60 * 24 * 30, // 30 days
+        maxAge: 60 * 60 * 24 * 30,
         path: '/',
       })
 
       router.push('/dashboard')
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      if (error.response.data) {
+        return toast.error(error.response.data)
+      }
+
+      toast.error('Erro ao fazer login')
     }
   }
 
@@ -60,6 +74,7 @@ export default function Login() {
                     {...register('email')}
                     placeholder="example@domain.com"
                     className="w-full rounded-md border border-gray-200 bg-gray-50 p-2 outline-blue-500"
+                    disabled={isSubmitting}
                   />
 
                   <label
@@ -68,21 +83,45 @@ export default function Login() {
                   >
                     Senha
                   </label>
-                  <div className="relative mb-6 flex items-center">
+                  <div className="relative flex items-center">
                     <input
                       id="password"
                       type="password"
                       {...register('password')}
                       placeholder="••••••••"
                       className="w-full rounded-md border border-gray-200 bg-gray-50 p-2 outline-blue-500"
+                      disabled={isSubmitting}
                     />
                   </div>
+                  <button
+                    type="button"
+                    onClick={toggleShowDropdown}
+                    className="mb-6 mt-3 block text-blue-500 hover:underline"
+                  >
+                    Esqueceu sua senha?
+                  </button>
 
                   <button
                     type="submit"
-                    className="rounded-md bg-blue-500 px-14 py-3 font-bold uppercase text-white transition-colors hover:bg-blue-600"
+                    className="flex w-44 items-center justify-center rounded-md bg-blue-500 px-14 py-3 font-bold uppercase text-white transition-colors hover:bg-blue-600 disabled:bg-blue-300"
+                    disabled={isSubmitting}
                   >
-                    Acessar
+                    {isSubmitting ? (
+                      <Oval
+                        height={24}
+                        width={24}
+                        color="#ffffff"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        ariaLabel="oval-loading"
+                        secondaryColor="#ffffff"
+                        strokeWidth={2}
+                        strokeWidthSecondary={2}
+                      />
+                    ) : (
+                      'Acessar'
+                    )}
                   </button>
                 </form>
               </div>
@@ -90,6 +129,13 @@ export default function Login() {
           </div>
         </div>
       </main>
+
+      {showDropdown && (
+        <ModalRocoverPassword
+          show={showDropdown}
+          toggleShow={toggleShowDropdown}
+        />
+      )}
     </>
   )
 }

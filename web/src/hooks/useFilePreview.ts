@@ -11,7 +11,7 @@ export default function useFilePreview(file: any) {
         setFileSource(URL.createObjectURL(file[0]))
       }
     }
-  }, [file])
+  }, [file, fileSource])
 
   return [fileSource, setFileSource]
 }
