@@ -16,7 +16,7 @@ async function signInUser(data: SignInData) {
 
   const isFirstLogin = await checkIsFirstLogin(user.createdAt, user.updatedAt)
 
-  const token = await generateToken({ id })
+  const token = await generateToken({ id, isLogged: true })
 
   return { name, email, isFirstLogin, token }
 }

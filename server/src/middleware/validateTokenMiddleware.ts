@@ -27,6 +27,7 @@ export default function validateTokenMiddleware(
 
     next()
   } catch (error) {
+    console.log(error)
     res.sendStatus(401)
   }
 }
