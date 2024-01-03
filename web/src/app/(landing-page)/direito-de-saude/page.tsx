@@ -145,7 +145,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-12 flex text-center">
+          <div className="mt-12 flex justify-center text-center">
             <Link
               prefetch={false}
               target="_blank"
