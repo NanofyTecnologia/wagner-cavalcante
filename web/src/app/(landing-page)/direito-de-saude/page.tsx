@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Link as ScrollLink } from '@mui/material'
-import {
-  BsHouse,
-  BsGraphUpArrow,
-  BsCurrencyDollar,
-  BsFileText,
-  BsGraphUp,
-} from 'react-icons/bs'
+
+import { GoLaw } from 'react-icons/go'
+import { SiGoogledocs } from 'react-icons/si'
+import { RiHealthBookLine } from 'react-icons/ri'
+import { MdHealthAndSafety } from 'react-icons/md'
 
 import MonteCavalcanteLogo from '@/assets/images/logo_text_white.png'
 
@@ -55,7 +53,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="rounded-md border border-primary p-6">
-              <BsGraphUpArrow className="text-5xl text-secondary" />
+              <RiHealthBookLine className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
                 Reajuste abusivo
@@ -71,7 +69,7 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsCurrencyDollar className="text-5xl text-secondary" />
+              <GoLaw className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
                 O aumento da mensalidade é legal?
@@ -87,7 +85,7 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsGraphUp className="text-5xl text-secondary" />
+              <MdHealthAndSafety className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
                 Quando o reajuste do plano é abusivo?
@@ -101,7 +99,7 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsFileText className="text-5xl text-secondary" />
+              <SiGoogledocs className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
                 Qual o seu tipo de plano?
