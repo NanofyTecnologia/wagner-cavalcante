@@ -14,7 +14,7 @@ export default function LandingPage() {
       <div className="relative bg-[url(../assets/images/assinando-papeis.jpg)] bg-cover">
         <div className="bg-black bg-opacity-60 py-6">
           <main className="mx-auto max-w-7xl py-32">
-            <div className="grid grid-cols-2 items-center px-12">
+            <div className="grid grid-cols-1 items-center px-12 sm:grid-cols-2">
               <div className="text-secondary">
                 <h1 className="font-garamond text-xl font-semibold uppercase">
                   Monte & Cavalcante
@@ -50,7 +50,7 @@ export default function LandingPage() {
             Nossos serviços
           </h2>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div className="rounded-md border border-primary p-6">
               <RiHealthBookLine className="mx-auto text-5xl text-secondary" />
 
@@ -123,7 +123,7 @@ export default function LandingPage() {
             Sobre nós
           </h2>
 
-          <div className="my-6 grid grid-cols-2 gap-12">
+          <div className="my-6 grid grid-cols-1 gap-12 sm:grid-cols-2">
             <div className="h-96 rounded-md bg-neutral-500">
               <Image
                 src={PhotoSamuel}
