@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Link as ScrollLink } from '@mui/material'
+
+import PhotoSamuel from '@/assets/images/samuel.jpg'
 
 import { GoLaw } from 'react-icons/go'
 import { SiGoogledocs } from 'react-icons/si'
 import { RiHealthBookLine } from 'react-icons/ri'
 import { MdHealthAndSafety } from 'react-icons/md'
-
-import MonteCavalcanteLogo from '@/assets/images/logo_text_white.png'
 
 export default function LandingPage() {
   return (
@@ -53,9 +52,9 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="rounded-md border border-primary p-6">
-              <RiHealthBookLine className="text-5xl text-secondary" />
+              <RiHealthBookLine className="mx-auto text-5xl text-secondary" />
 
-              <h3 className="my-4 text-xl font-semibold text-primary">
+              <h3 className="my-4 text-center text-xl font-semibold text-primary">
                 Reajuste abusivo
               </h3>
 
@@ -69,9 +68,9 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <GoLaw className="text-5xl text-secondary" />
+              <GoLaw className="mx-auto text-5xl text-secondary" />
 
-              <h3 className="my-4 text-xl font-semibold text-primary">
+              <h3 className="my-4 text-center text-xl font-semibold text-primary">
                 O aumento da mensalidade é legal?
               </h3>
 
@@ -85,9 +84,9 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <MdHealthAndSafety className="text-5xl text-secondary" />
+              <MdHealthAndSafety className="mx-auto text-5xl text-secondary" />
 
-              <h3 className="my-4 text-xl font-semibold text-primary">
+              <h3 className="my-4 text-center text-xl font-semibold text-primary">
                 Quando o reajuste do plano é abusivo?
               </h3>
 
@@ -99,9 +98,9 @@ export default function LandingPage() {
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <SiGoogledocs className="text-5xl text-secondary" />
+              <SiGoogledocs className="mx-auto text-5xl text-secondary" />
 
-              <h3 className="my-4 text-xl font-semibold text-primary">
+              <h3 className="my-4 text-center text-xl font-semibold text-primary">
                 Qual o seu tipo de plano?
               </h3>
 
@@ -125,36 +124,36 @@ export default function LandingPage() {
           </h2>
 
           <div className="my-6 grid grid-cols-2 gap-12">
-            <div className="h-96 rounded-md bg-neutral-500"></div>
+            <div className="h-96 rounded-md bg-neutral-500">
+              <Image
+                src={PhotoSamuel}
+                alt="doutor samuel monte"
+                className="h-full w-full rounded-md object-cover object-[0%_35%] "
+              />
+            </div>
 
             <div className="space-y-4">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Delectus doloribus itaque provident accusantium suscipit
-                repellendus dolore dignissimos at cumque maiores, veritatis
-                dolorem ad ut exercitationem impedit quam maxime a recusandae.
-              </p>
-
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Delectus doloribus itaque provident accusantium suscipit
-                repellendus dolore dignissimos at cumque maiores, veritatis
-                dolorem ad ut exercitationem impedit quam maxime a recusandae.
-              </p>
-
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Delectus doloribus itaque provident accusantium suscipit
-                repellendus dolore dignissimos at cumque maiores, veritatis
-                dolorem ad ut exercitationem impedit quam maxime a recusandae.
+                Samuel Monte, estudei na faculdade de Direito da Universidade
+                Federal de Alagoas, sou especialista em Direito Público e em
+                Direito Médico e da Saúde, vice presidente da comissão de
+                Direito Médico e da Saúde da OAB AL, advogado desde 2018, com
+                atuação focada em na relação médico/paciente quanto contra
+                planos de saúde, sempre com foco em ajudar aqueles que precisam
+                de tutelas em saúde.
               </p>
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <button className="rounded-md bg-primary px-6 py-4 font-semibold uppercase text-white">
-              Entre em contato conosco
-            </button>
+          <div className="mt-12 flex text-center">
+            <Link
+              prefetch={false}
+              target="_blank"
+              href="https://api.whatsapp.com/send/?phone=558296680662&text&type=phone_number&app_absent=0"
+              className="mt-6 block rounded-md bg-primary px-12 py-4 text-sm font-semibold uppercase text-white"
+            >
+              Fale Com o Advogado Agora
+            </Link>
           </div>
         </div>
       </section>
