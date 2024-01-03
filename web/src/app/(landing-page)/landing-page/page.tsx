@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { Link as ScrollLink } from '@mui/material'
 
@@ -9,7 +10,7 @@ export default function LandingPage() {
     <>
       <div className="relative bg-[url(../assets/images/assinando-papeis.jpg)] bg-cover">
         <div className="bg-black bg-opacity-60 py-6">
-          <header className="mx-auto my-6 max-w-7xl rounded-md border-2 border-secondary px-4 py-2">
+          {/* <header className="mx-auto my-6 max-w-7xl rounded-md border-2 border-secondary px-4 py-2">
             <div className="flex w-full items-center justify-between">
               <Image src={MonteCavalcanteLogo} alt="" className="w-60" />
 
@@ -47,7 +48,7 @@ export default function LandingPage() {
                 Contato
               </button>
             </div>
-          </header>
+          </header> */}
 
           <main className="mx-auto max-w-7xl py-32">
             <div className="grid grid-cols-2 items-center px-12">
@@ -61,28 +62,21 @@ export default function LandingPage() {
                 </h2>
 
                 <p className="mt-4 text-3xl">
-                  Lorem ipsum dolor sit{' '}
-                  <span className="font-bold italic">
-                    amet consectetur adipisicing
-                  </span>{' '}
-                  elit. Quasi, vero tempore deserunt est alias exercitationem
-                  ratione aspernatur officiis nihil nesciunt provident
-                  necessitatibus enim quis inventore blanditiis. Natus culpa
-                  nobis distinctio.
+                  Advogado Especializado em Direito de Saúde
                 </p>
 
-                <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis enim architecto exercitationem sit fugiat?
-                  Voluptatibus quisquam porro expedita quia, suscipit voluptate
-                  repudiandae et commodi at, inventore error eos distinctio ex.
-                </p>
-
-                <button className="mt-6 rounded-md bg-primary px-12 py-4 text-sm font-semibold uppercase text-white">
-                  Saiba mais
-                </button>
+                <div className="flex">
+                  <Link
+                    prefetch={false}
+                    target="_blank"
+                    href="https://api.whatsapp.com/send/?phone=558296680662&text&type=phone_number&app_absent=0"
+                    className="mt-6 block rounded-md bg-primary px-12 py-4 text-sm font-semibold uppercase text-white"
+                  >
+                    Fale Com o Advogado Agora
+                  </Link>
+                </div>
               </div>
-              <div className="flex max-w-sm items-center justify-start px-8">
+              {/*  <div className="flex max-w-sm items-center justify-start px-8">
                 <div className="rounded-md bg-primary p-4">
                   <div className="flex items-center gap-4">
                     <div className="rounded-full bg-black p-8"></div>
@@ -96,7 +90,7 @@ export default function LandingPage() {
                     Voluptatibus.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </main>
         </div>
@@ -283,7 +277,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-300">
+      {/* <section className="bg-neutral-300">
         <div className="mx-auto max-w-7xl px-12 py-8">
           <div className="grid grid-cols-2">
             <div className="flex flex-col items-start justify-center">
@@ -359,7 +353,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
