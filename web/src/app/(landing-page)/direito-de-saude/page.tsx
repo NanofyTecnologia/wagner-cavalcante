@@ -1,55 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Link as ScrollLink } from '@mui/material'
+import {
+  BsHouse,
+  BsGraphUpArrow,
+  BsCurrencyDollar,
+  BsFileText,
+  BsGraphUp,
+} from 'react-icons/bs'
 
 import MonteCavalcanteLogo from '@/assets/images/logo_text_white.png'
-import { BsHouse } from 'react-icons/bs'
 
 export default function LandingPage() {
   return (
     <>
       <div className="relative bg-[url(../assets/images/assinando-papeis.jpg)] bg-cover">
         <div className="bg-black bg-opacity-60 py-6">
-          {/* <header className="mx-auto my-6 max-w-7xl rounded-md border-2 border-secondary px-4 py-2">
-            <div className="flex w-full items-center justify-between">
-              <Image src={MonteCavalcanteLogo} alt="" className="w-60" />
-
-              <nav className="flex items-center gap-6">
-                <ScrollLink
-                  href="#begin"
-                  className="text-neutral-300 no-underline hover:text-black"
-                >
-                  Início
-                </ScrollLink>
-
-                <ScrollLink
-                  href="#services"
-                  className="text-neutral-300 no-underline hover:text-black"
-                >
-                  Serviços
-                </ScrollLink>
-
-                <ScrollLink
-                  href="#about"
-                  className="text-neutral-300 no-underline hover:text-black"
-                >
-                  Sobre nós
-                </ScrollLink>
-
-                <ScrollLink
-                  href="#contact"
-                  className="text-neutral-300 no-underline hover:text-black"
-                >
-                  Contato
-                </ScrollLink>
-              </nav>
-
-              <button className="rounded-md bg-primary p-2 uppercase text-white hover:bg-primary/80">
-                Contato
-              </button>
-            </div>
-          </header> */}
-
           <main className="mx-auto max-w-7xl py-32">
             <div className="grid grid-cols-2 items-center px-12">
               <div className="text-secondary">
@@ -76,21 +42,6 @@ export default function LandingPage() {
                   </Link>
                 </div>
               </div>
-              {/*  <div className="flex max-w-sm items-center justify-start px-8">
-                <div className="rounded-md bg-primary p-4">
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-black p-8"></div>
-                    <div className="-translate-x-12 rounded-full border-2 border-primary bg-black p-8"></div>
-                    <div className="-translate-x-24 rounded-full border-2 border-primary bg-black p-8"></div>
-                  </div>
-
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis enim architecto exercitationem sit fugiat?
-                    Voluptatibus.
-                  </p>
-                </div>
-              </div> */}
             </div>
           </main>
         </div>
@@ -98,139 +49,72 @@ export default function LandingPage() {
 
       <section className="bg-neutral-900">
         <div className="mx-auto max-w-7xl px-12 py-8">
-          <h2 className="text-center text-xl font-semibold uppercase text-secondary">
+          <h2 className="mb-8 text-center text-xl font-semibold uppercase text-secondary">
             Nossos serviços
           </h2>
 
-          <h3 className="my-6 text-center text-4xl text-primary">
-            Veniam, voluptatum. Lorem ipsum dolor sit amet consectetur
-          </h3>
-
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
+              <BsGraphUpArrow className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
+                Reajuste abusivo
               </h3>
 
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
+              <p className="text-justify text-secondary">
+                O reajuste abusivo de plano de saúde é uma prática ilegal e
+                passível de ação na Justiça. Com a orientação de um advogado
+                especializado em planos de saúde, o beneficiário pode pedir a
+                revisão judicial das cobranças excessivas inclusive reavendo o
+                que pagou em excesso.
               </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
+              <BsCurrencyDollar className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
+                O aumento da mensalidade é legal?
               </h3>
 
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
+              <p className="text-justify text-secondary">
+                Sim. A Agência Nacional de Saúde (ANS) autoriza que os planos de
+                saúde façam reajustes anuais nas mensalidades para os planos
+                individuais, estipulando as regras para a correção dos valores.
+                Para os planos coletivos e/ou empresariais as regras dos
+                aumentos devem observar o estipulado nos contratos.
               </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
+              <BsGraphUp className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
+                Quando o reajuste do plano é abusivo?
               </h3>
 
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
+              <p className="text-justify text-secondary">
+                O reajuste do plano de saúde é considerado abusivo quando excede
+                os limites estabelecidos pela ANS ou quando não respeita as
+                condições do contrato.
               </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
             </div>
 
             <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
+              <BsFileText className="text-5xl text-secondary" />
 
               <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
+                Qual o seu tipo de plano?
               </h3>
 
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
+              <p className="text-justify text-secondary">
+                Seja seu plano individual, empresarial, coletivo ou por adesão,
+                é necessário ficar atento aos reajuste aplicado pelo plano de
+                saúde, pois, não é incomum que aconteça o reajuste abusivo e
+                cada categoria de contrato tem um reajuste diferente que deve
+                ser respeitado. Por conta disso, o suporte de um advogado
+                especializado se faz necessário
               </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
-            </div>
-
-            <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
-
-              <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
-              </h3>
-
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
-              </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
-            </div>
-
-            <div className="rounded-md border border-primary p-6">
-              <BsHouse className="text-5xl text-secondary" />
-
-              <h3 className="my-4 text-xl font-semibold text-primary">
-                Lorem ipsum dolor
-              </h3>
-
-              <p className="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                molestiae reprehenderit est praesentium fugiat ipsum velit
-                dolorem cumque rem excepturi pariatur quos.
-              </p>
-
-              <a
-                href="#"
-                className="mt-4 block uppercase text-secondary underline"
-              >
-                Saiba mais
-              </a>
             </div>
           </div>
         </div>
@@ -276,84 +160,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* <section className="bg-neutral-300">
-        <div className="mx-auto max-w-7xl px-12 py-8">
-          <div className="grid grid-cols-2">
-            <div className="flex flex-col items-start justify-center">
-              <h2 className="mb-4 font-semibold uppercase text-black">
-                Contato
-              </h2>
-
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Ratione impedit eos laudantium vel vitae! Voluptate.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="mt-6">
-                  <h3 className="text-xl font-bold">Suporte</h3>
-
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatem.
-                  </p>
-                </div>
-
-                <div className="mt-6">
-                  <h3 className="text-xl font-bold">Suporte</h3>
-
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <div className="w-full max-w-md rounded-md bg-neutral-400 p-4">
-                <form className="mx-auto w-full max-w-md space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Nome"
-                    className="w-full rounded-md p-3 outline-primary"
-                  />
-                  <input
-                    type="text"
-                    placeholder="E-mail"
-                    className="w-full rounded-md p-3 outline-primary"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Telefone"
-                    className="w-full rounded-md p-3 outline-primary"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Assunto"
-                    className="w-full rounded-md p-3 outline-primary"
-                  />
-                  <textarea
-                    rows={4}
-                    placeholder="Mensagem"
-                    className="w-full resize-none rounded-md p-3 outline-primary"
-                  />
-
-                  <div className="text-end">
-                    <button
-                      type="submit"
-                      className="rounded-md bg-neutral-600 px-12 py-3 font-bold uppercase text-white transition-colors hover:bg-neutral-600/80"
-                    >
-                      Enviar
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   )
 }
