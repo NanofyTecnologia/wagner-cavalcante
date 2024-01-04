@@ -50,165 +50,102 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <section className="bg-white">
+      <section className="bg-neutral-900">
         <div className="mx-auto max-w-7xl px-12 py-8">
           <h2 className="mb-8 text-center text-xl font-semibold uppercase text-secondary">
             Nossos serviços
           </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <BsHeartPulse />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Negativa de Plano de Saúde
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaRegMoneyBillAlt />
               </div>
 
-              <p className="mt-2 text-center  text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Reajuste Abusivo
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHome />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Home Care / Internação <br /> Domiciliar
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaBriefcaseMedical />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Indenização Por Erro Médico <br /> / Odontológico
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <BsHeartPulseFill />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Indenização Por Dano <br /> Estético
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHandHoldingUsd />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Medicação de Alto Custo
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaSackDollar />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Reebolso de Despesas <br /> Médicas
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaFileMedical />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Cancelamento Indevido do <br /> Plano de Saúde
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex items-center justify-center rounded-full bg-black p-4 text-4xl text-white">
+            <div className="rounded-md border border-primary p-6">
+              <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHospitalAlt />
               </div>
 
-              <p className="mt-2 text-center text-xl font-bold text-neutral-700">
+              <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Demora Na Autorização de <br /> Cirurgias
               </p>
             </div>
-
-            {/* <div className="rounded-md border border-primary p-6">
-              <RiHealthBookLine className="mx-auto text-5xl text-secondary" />
-
-              <h3 className="my-4 text-center text-xl font-semibold text-primary">
-                Reajuste abusivo
-              </h3>
-
-              <p className="text-justify text-secondary">
-                O reajuste abusivo de plano de saúde é uma prática ilegal e
-                passível de ação na Justiça. Com a orientação de um advogado
-                especializado em planos de saúde, o beneficiário pode pedir a
-                revisão judicial das cobranças excessivas inclusive reavendo o
-                que pagou em excesso.
-              </p>
-            </div>
-
-            <div className="rounded-md border border-primary p-6">
-              <GoLaw className="mx-auto text-5xl text-secondary" />
-
-              <h3 className="my-4 text-center text-xl font-semibold text-primary">
-                O aumento da mensalidade é legal?
-              </h3>
-
-              <p className="text-justify text-secondary">
-                Sim. A Agência Nacional de Saúde (ANS) autoriza que os planos de
-                saúde façam reajustes anuais nas mensalidades para os planos
-                individuais, estipulando as regras para a correção dos valores.
-                Para os planos coletivos e/ou empresariais as regras dos
-                aumentos devem observar o estipulado nos contratos.
-              </p>
-            </div>
-
-            <div className="rounded-md border border-primary p-6">
-              <MdHealthAndSafety className="mx-auto text-5xl text-secondary" />
-
-              <h3 className="my-4 text-center text-xl font-semibold text-primary">
-                Quando o reajuste do plano é abusivo?
-              </h3>
-
-              <p className="text-justify text-secondary">
-                O reajuste do plano de saúde é considerado abusivo quando excede
-                os limites estabelecidos pela ANS ou quando não respeita as
-                condições do contrato.
-              </p>
-            </div>
-
-            <div className="rounded-md border border-primary p-6">
-              <SiGoogledocs className="mx-auto text-5xl text-secondary" />
-
-              <h3 className="my-4 text-center text-xl font-semibold text-primary">
-                Qual o seu tipo de plano?
-              </h3>
-
-              <p className="text-justify text-secondary">
-                Seja seu plano individual, empresarial, coletivo ou por adesão,
-                é necessário ficar atento aos reajuste aplicado pelo plano de
-                saúde, pois, não é incomum que aconteça o reajuste abusivo e
-                cada categoria de contrato tem um reajuste diferente que deve
-                ser respeitado. Por conta disso, o suporte de um advogado
-                especializado se faz necessário
-              </p>
-            </div> */}
           </div>
         </div>
       </section>
@@ -230,15 +167,15 @@ export default function LandingPage() {
 
             <div className="space-y-4 text-justify text-2xl">
               <p>
-                Samuel Monte, estudei na faculdade de Direito da Universidade
+                Samuel Monte, estudou na faculdade de Direito da Universidade
                 Federal de Alagoas, especialista em Direito Público e em Direito
                 Médico e da Saúde.
               </p>
 
               <p>
-                Advogado desde 2018, atuo como vice presidente da comissão de
+                Advogado desde 2018, atua como vice presidente da comissão de
                 Direito Médico e da Saúde da OAB AL, com foco na relação dos
-                segurados contra planos de saúde, sempre dando o meu melhor para
+                segurados contra planos de saúde, sempre fazendo o melhor para
                 ajudar aqueles que precisam de proteção quando o assunto é
                 direito de saúde.
               </p>
