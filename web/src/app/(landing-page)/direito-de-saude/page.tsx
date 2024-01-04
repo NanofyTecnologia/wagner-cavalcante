@@ -165,7 +165,7 @@ export default function LandingPage() {
               />
             </div>
 
-            <div className="flex flex-col justify-center space-y-4 text-justify text-2xl">
+            <div className="flex flex-col justify-center space-y-4 text-justify text-xl">
               <p>
                 Samuel Monte, estudou na faculdade de Direito da Universidade
                 Federal de Alagoas, especialista em Direito Público e em Direito
