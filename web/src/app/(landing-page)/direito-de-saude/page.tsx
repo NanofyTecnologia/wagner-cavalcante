@@ -177,7 +177,7 @@ export default function LandingPage() {
                 Médico e da Saúde da OAB AL, e atua com foco na relação dos
                 segurados contra planos de saúde, sempre fazendo o melhor para
                 ajudar aqueles que precisam de proteção quando o assunto é
-                direito de saúde.
+                direito de saúde.
               </p>
 
               <p>
