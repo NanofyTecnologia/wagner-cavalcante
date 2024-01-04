@@ -177,7 +177,7 @@ export default function LandingPage() {
                 da comissão de Direito Médico e da Saúde da OAB AL e atua com
                 foco na relação dos segurados contra planos de saúde, sempre
                 fazendo o melhor para ajudar aqueles que precisam de proteção
-                quando o assunto é direito de saúde.
+                quando o assunto é direito de saúde.
               </p>
 
               <p>
