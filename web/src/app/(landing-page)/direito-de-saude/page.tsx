@@ -39,7 +39,7 @@ export default function LandingPage() {
                     prefetch={false}
                     target="_blank"
                     href="https://api.whatsapp.com/send/?phone=5582999355766&text&type=phone_number&app_absent=0"
-                    className="mt-6 block rounded-md bg-primary px-12 py-4 text-sm font-semibold uppercase text-white"
+                    className="mt-6 block rounded-md bg-primary px-16 py-5 text-lg font-semibold uppercase text-white"
                   >
                     Fale Com o Advogado Agora
                   </Link>
@@ -193,7 +193,7 @@ export default function LandingPage() {
               prefetch={false}
               target="_blank"
               href="https://api.whatsapp.com/send/?phone=5582999355766&text&type=phone_number&app_absent=0"
-              className="mt-6 block rounded-md bg-primary px-12 py-4 text-sm font-semibold uppercase text-white"
+              className="mt-6 block rounded-md bg-primary px-16 py-5 text-lg font-semibold uppercase text-white"
             >
               Fale Com o Advogado Agora
             </Link>
