@@ -173,11 +173,11 @@ export default function LandingPage() {
               </p>
 
               <p>
-                Advogado desde 2018, atua como vice presidente da comissão de
-                Direito Médico e da Saúde da OAB AL, com foco na relação dos
-                segurados contra planos de saúde, sempre fazendo o melhor para
-                ajudar aqueles que precisam de proteção quando o assunto é
-                direito de saúde.
+                Advogado desde 2018, atua também como vice presidente da
+                comissão de Direito Médico e da Saúde da OAB AL, com foco na
+                relação dos segurados contra planos de saúde, sempre fazendo o
+                melhor para ajudar aqueles que precisam de proteção quando o
+                assunto é direito de saúde.
               </p>
 
               <p>
