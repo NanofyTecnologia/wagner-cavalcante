@@ -27,7 +27,7 @@ export default function LandingPage() {
                 </h1>
 
                 <h2 className="font-garamond text-4xl font-semibold uppercase">
-                  Advocacia
+                  Advogados
                 </h2>
 
                 <p className="mt-4 text-4xl">
@@ -123,7 +123,7 @@ export default function LandingPage() {
               </div>
 
               <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
-                Reebolso de Despesas <br /> Médicas
+                Reembolso de Despesas <br /> Médicas
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export default function LandingPage() {
               />
             </div>
 
-            <div className="space-y-4 text-justify text-2xl">
+            <div className="flex flex-col justify-center space-y-4 text-justify text-2xl">
               <p>
                 Samuel Monte, estudou na faculdade de Direito da Universidade
                 Federal de Alagoas, especialista em Direito Público e em Direito
