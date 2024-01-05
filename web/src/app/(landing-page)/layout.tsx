@@ -1,3 +1,4 @@
+import GoogleTagManager from '@/components/GoogleTagManager'
 import '../globals.css'
 
 import {
@@ -36,10 +37,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <GoogleTagManager />
       <body
         className={`${italiana.variable} ${garamond.variable} ${montserrat.className} bg-secondary`}
       >
         {children}
+
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTFWZ8R5"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        `,
+          }}
+        />
       </body>
     </html>
   )
