@@ -79,8 +79,8 @@ export default function AboutPage() {
                   alt="Foto de Wagner Cavalcante"
                 />
                 <div className="bg-rangoon p-4 text-center">
-                  <div className="mb-2 font-garamond text-xl font-bold italic text-[#aa9166]">
-                    Wagner Cavalcante
+                  <div className="mb-2 font-garamond text-lg font-bold italic text-[#aa9166]">
+                    Dr. Wagner Cavcalcante
                   </div>
                   <p className="text-base text-secondary">
                     Sócio-Fundador e advogado especialista em direito
@@ -99,8 +99,8 @@ export default function AboutPage() {
                   alt="Foto de Wagner Cavalcante"
                 />
                 <div className="bg-rangoon p-4 text-center">
-                  <div className="mb-2 font-garamond text-xl font-bold italic text-[#aa9166]">
-                    Cicero Monte
+                  <div className="mb-2 font-garamond text-lg font-bold italic text-[#aa9166]">
+                    Dr. Samuel Monte
                   </div>
                   <p className="text-base text-secondary">
                     Sócio-Fundador e advogado especialista em direito médico e
