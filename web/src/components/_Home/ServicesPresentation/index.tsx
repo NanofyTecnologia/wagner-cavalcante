@@ -1,7 +1,7 @@
-import Container from '@/components/Container'
 import Link from 'next/link'
 
-import { FcMoneyTransfer, FcServices, FcIdea, FcElectricalSensor, FcHome, FcTodoList } from 'react-icons/fc'
+import Container from '@/components/Container'
+import { FcElectricalSensor, FcHome, FcTodoList } from 'react-icons/fc'
 
 import { FaArrowRight } from 'react-icons/fa6'
 

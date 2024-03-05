@@ -14,7 +14,6 @@ type FieldValues = {
 }
 
 export default function ModalRocoverPassword({
-  show,
   toggleShow,
 }: ModalRecoverPasswordProps) {
   const {

@@ -1,9 +1,7 @@
 import Link from 'next/link'
-import Container from '@/components/Container'
 
 import {
   FaLocationDot,
-  FaPhone,
   FaEnvelope,
   FaInstagram,
   FaWhatsapp,

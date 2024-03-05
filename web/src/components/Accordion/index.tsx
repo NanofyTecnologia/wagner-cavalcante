@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { AiFillCaretUp } from 'react-icons/ai'
 
 import useToggle from '@/hooks/useToggle'
 import { BsDashLg, BsPlusLg } from 'react-icons/bs'

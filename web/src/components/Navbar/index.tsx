@@ -4,16 +4,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
-import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 import LogoHorizontal from '@/assets/images/logo_text_white.png'
-import logo from '@/assets/images/logo.jpg'
+
 import useToggle from '@/hooks/useToggle'
 import { BiX } from 'react-icons/bi'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [showModal, toggleShow, elementRef, buttonRef] = useToggle()
+  const [showModal, toggleShow, elementRef] = useToggle()
   const [windowScrolled, setWindowScrolled] = useState<boolean>(false)
 
   const pathName = usePathname()
