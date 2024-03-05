@@ -1,11 +1,12 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import dayjs from 'dayjs'
 
 import { api } from '@/lib/axios'
 import Container from '@/components/Container'
-import Image from 'next/image'
-import Link from 'next/link'
 
 type News = {
   id: string
@@ -36,32 +37,50 @@ export default function News() {
   }, [])
 
   return (
-    <section className="h-screen">
+    <section className="min-h-screen py-8">
       <Container>
         <div className="grid w-full grid-cols-1 gap-6 py-8 sm:grid-cols-2 md:grid-cols-3">
-          {news.map((item) => (
-            <Link
-              key={item.id}
-              href={`/noticias/${item.id}`}
-              className="block rounded-lg border border-neutral-200 p-4 shadow transition-all hover:scale-105"
-            >
-              <Image
-                width={500}
-                height={350}
-                src={item.coverURL}
-                alt=""
-                className="h-52 rounded-lg"
-              />
-              <h1 className="my-2 font-bold">{item.title}</h1>
-              <div
-                className="text-sm text-neutral-600"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    item.content.split(' ').slice(0, 20).join(' ') + '...',
-                }}
-              ></div>
-            </Link>
-          ))}
+          {news.length === 0 ? (
+            <div className="col-span-3 flex items-center justify-center">
+              <h3 className="text-2xl">
+                No momento, não contamos com nenhum conteúdo disponível.
+              </h3>
+            </div>
+          ) : (
+            news.map((item) => (
+              <Link
+                key={item.id}
+                href={`/noticias/${item.id}`}
+                className="flex flex-col overflow-hidden rounded-md bg-neutral-100 shadow transition-transform hover:scale-105"
+              >
+                <div className="h-56">
+                  <Image
+                    width={300}
+                    height={300}
+                    alt={item.title}
+                    src={item.coverURL}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                <div className="flex-1 space-y-4 p-4">
+                  <h2 className="text-xl">{item.title}</h2>
+
+                  <div
+                    className="text-justify"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        item.content.split(' ').slice(0, 20).join(' ') + '...',
+                    }}
+                  ></div>
+                </div>
+
+                <h5 className="p-4 text-sm">
+                  Publicado {dayjs(item.createdAt).format('DD/MM/YYYY HH:mm')}
+                </h5>
+              </Link>
+            ))
+          )}
         </div>
       </Container>
     </section>

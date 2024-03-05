@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Container from '@/components/Container'
 import About from '@/components/_Home/About'
 
-import TeamOne from '@/assets/images/team-1.jpg'
-import TeamTwo from '@/assets/images/team-2.jpg'
+import WagnerCavalcante from '@/assets/images/wagner_cavalcante.jpg'
+import SamuelMonte from '@/assets/images/samuel.jpg'
+
 import { FaRegCircleCheck } from 'react-icons/fa6'
 import { FaUserTie, FaRegThumbsUp, FaRegHandshake } from 'react-icons/fa'
 
@@ -71,16 +72,19 @@ export default function AboutPage() {
             <div className="flex items-center justify-center">
               <div className="w-64 overflow-hidden rounded shadow-lg">
                 <Image
+                  width={286}
+                  height={384}
                   className="w-full object-cover"
-                  src={TeamOne}
+                  src={WagnerCavalcante}
                   alt="Foto de Wagner Cavalcante"
                 />
-                <div className="bg-rangoon px-6 py-4 text-center">
+                <div className="bg-rangoon p-4 text-center">
                   <div className="mb-2 font-garamond text-xl font-bold italic text-[#aa9166]">
                     Wagner Cavalcante
                   </div>
                   <p className="text-base text-secondary">
-                    Sócio-Fundador & Advogado
+                    Sócio-Fundador e advogado especialista em direito
+                    condominial.
                   </p>
                 </div>
               </div>
@@ -88,16 +92,19 @@ export default function AboutPage() {
             <div className="flex items-center justify-center">
               <div className="w-64 overflow-hidden rounded shadow-lg">
                 <Image
-                  className="w-full object-cover"
-                  src={TeamTwo}
+                  width={600}
+                  height={600}
+                  className="h-96 w-64 object-cover object-[]"
+                  src={SamuelMonte}
                   alt="Foto de Wagner Cavalcante"
                 />
-                <div className="bg-rangoon px-6 py-4 text-center">
+                <div className="bg-rangoon p-4 text-center">
                   <div className="mb-2 font-garamond text-xl font-bold italic text-[#aa9166]">
                     Cicero Monte
                   </div>
                   <p className="text-base text-secondary">
-                    Sócio-Fundador & Advogado
+                    Sócio-Fundador e advogado especialista em direito médico e
+                    da saúde.
                   </p>
                 </div>
               </div>

@@ -3,6 +3,8 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import {
   Italiana,
+  Bellefair,
+  Montserrat,
   Open_Sans as OpenSans,
   EB_Garamond as EbGaramond,
 } from 'next/font/google'
@@ -15,6 +17,12 @@ const openSans = OpenSans({
   subsets: ['latin'],
 })
 
+const bellefair = Bellefair({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bellefair',
+})
+
 const italiana = Italiana({
   weight: '400',
   subsets: ['latin'],
@@ -25,6 +33,12 @@ const garamond = EbGaramond({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-garamond',
+})
+
+const monteserrat = Montserrat({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-montserrat',
 })
 
 export const metadata: Metadata = {
@@ -40,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${garamond.variable} ${italiana.variable} ${openSans.className}`}
+        className={`${garamond.variable} ${italiana.variable} ${bellefair.variable} ${monteserrat.className}`}
       >
         <Navbar />
         {children}

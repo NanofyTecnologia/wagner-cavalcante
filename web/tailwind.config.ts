@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         italiana: 'var(--font-italiana)',
         garamond: 'var(--font-garamond)',
+        bellefair: 'var(--font-bellefair)',
       },
       colors: {
         primary: '#999999',

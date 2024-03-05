@@ -43,23 +43,35 @@ export default function Job() {
             Confira nossas vagas disponíveis:
           </h2>
 
-          {jobs.map((job) => (
-            <Accordion title={job.title} key={job.id}>
-              <div className="my-4 flex items-center justify-end gap-12">
-                <span className="flex items-center gap-2">
-                  <BsBuildingFill /> {job.company}
-                </span>
-
-                <span className="flex items-center gap-2">
-                  <BsFillPinMapFill /> {job.location}
-                </span>
+          {jobs.length === 0 ? (
+            <>
+              <div className="mt-12 flex items-center justify-center">
+                <p className="text-center">
+                  No momento não temos vagas disponíveis.
+                </p>
               </div>
-              <div
-                className="tinymce"
-                dangerouslySetInnerHTML={{ __html: job.description }}
-              />
-            </Accordion>
-          ))}
+            </>
+          ) : (
+            <>
+              {jobs.map((job) => (
+                <Accordion title={job.title} key={job.id}>
+                  <div className="my-4 flex items-center justify-end gap-12">
+                    <span className="flex items-center gap-2">
+                      <BsBuildingFill /> {job.company}
+                    </span>
+
+                    <span className="flex items-center gap-2">
+                      <BsFillPinMapFill /> {job.location}
+                    </span>
+                  </div>
+                  <div
+                    className="tinymce"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
+                </Accordion>
+              ))}
+            </>
+          )}
         </Container>
       </section>
     </>

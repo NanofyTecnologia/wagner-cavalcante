@@ -1,6 +1,5 @@
 import Administrative from '@/components/_Services/Administrative'
 import Outsourcing from '@/components/_Services/Outsourcing'
-import Consultancy from '@/components/_Services/Consultancy'
 import Container from '@/components/Container'
 
 export default function ServicesPage() {
@@ -21,8 +20,6 @@ export default function ServicesPage() {
       <Administrative />
 
       <Outsourcing />
-
-      <Consultancy />
     </>
   )
 }

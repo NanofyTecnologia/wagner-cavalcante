@@ -1,6 +1,6 @@
-import AboutCareer from '@/components/_Career/AboutCareer'
 import Job from '@/components/_Career/Job'
 import Container from '@/components/Container'
+import AboutCareer from '@/components/_Career/AboutCareer'
 
 export default function CareerPage() {
   return (
@@ -17,7 +17,7 @@ export default function CareerPage() {
         </Container>
       </section>
 
-      <AboutCareer />
+      {/* <AboutCareer /> */}
 
       <Job />
     </>

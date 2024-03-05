@@ -37,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <GoogleTagManager />
+      <head>
+        <GoogleTagManager />
+      </head>
       <body
         className={`${italiana.variable} ${garamond.variable} ${montserrat.className} bg-secondary`}
       >
