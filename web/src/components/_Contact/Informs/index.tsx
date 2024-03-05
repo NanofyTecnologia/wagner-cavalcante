@@ -16,7 +16,7 @@ export default function Informs() {
           <h2 className="text-center font-garamond text-3xl italic">
             Meios de contato
           </h2>
-          <div className="mt-4 grid grid-cols-1 justify-center gap-4 md:mt-12 md:grid-cols-4">
+          <div className="mt-4 grid grid-cols-1 justify-center gap-4 md:mt-12 md:grid-cols-2">
             <div className="flex flex-col items-center">
               <FaLocationDot className="rounded-full border-2 border-black px-2 text-4xl" />
               <span className="mb-2 mt-8 block font-bold">Nosso Endereço</span>
