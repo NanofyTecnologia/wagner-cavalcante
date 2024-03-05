@@ -110,10 +110,10 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <div className="group invisible relative flex w-60 justify-end lg:visible">
+          <div className="invisible flex w-60 justify-end lg:visible">
             <button
               onClick={toggleShow}
-              className="cursor-pointer rounded-md border-2 bg-transparent px-3 py-1 text-white hover:bg-white hover:text-black"
+              className="group relative cursor-pointer rounded-md border-2 bg-transparent px-3 py-1 text-white hover:bg-white hover:text-black"
             >
               Login
               <div className="invisible absolute right-0 top-10 w-72 rounded border bg-neutral-100 p-1 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
