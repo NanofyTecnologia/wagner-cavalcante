@@ -11,6 +11,7 @@ import {
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import NotPayScreen from '@/components/not-pay-screen'
 
 const openSans = OpenSans({
   weight: '400',
@@ -56,9 +57,11 @@ export default function RootLayout({
       <body
         className={`${garamond.variable} ${italiana.variable} ${bellefair.variable} ${monteserrat.className}`}
       >
-        <Navbar />
+        {/* <Navbar />
         {children}
-        <Footer />
+        <Footer /> */}
+
+        <NotPayScreen />
       </body>
     </html>
   )
