@@ -57,11 +57,9 @@ export default function RootLayout({
       <body
         className={`${garamond.variable} ${italiana.variable} ${bellefair.variable} ${monteserrat.className}`}
       >
-        {/* <Navbar />
+        <Navbar />
         {children}
-        <Footer /> */}
-
-        <NotPayScreen />
+        <Footer />
       </body>
     </html>
   )
