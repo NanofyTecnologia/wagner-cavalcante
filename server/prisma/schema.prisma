@@ -48,6 +48,22 @@ model Job {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Applicant Applicant[]
 
   @@map("jobs")
+}
+
+model Applicant {
+  id     String @id @default(uuid())
+  name   String
+  email  String
+  phone  String
+  resume String
+  job    Job    @relation(fields: [jobId], references: [id])
+  jobId  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("applicants")
 }

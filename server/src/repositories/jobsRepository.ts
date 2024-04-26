@@ -25,7 +25,11 @@ function destroy(jobId: string) {
 }
 
 function findAll() {
-  return prisma.job.findMany()
+  return prisma.job.findMany({
+    include: {
+      Applicant: true,
+    },
+  })
 }
 
 function findById(jobId: string) {

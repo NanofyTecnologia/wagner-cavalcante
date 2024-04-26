@@ -17,5 +17,6 @@ router.use('/post', postRouter)
 router.use('/upload', uploadRouter)
 router.use('/version', versionRouter)
 router.use('/contact', contactRouter)
+router.use('/applicant', applicantRouter)
 
 export default router

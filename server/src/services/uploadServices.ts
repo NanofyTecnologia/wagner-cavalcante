@@ -6,7 +6,7 @@ async function uploadFile(upload) {
     throw new Error('File not found')
   }
 
-  const mimeTypeRegex = /^image\/(jpe?g|png|gif|bmp)$/
+  const mimeTypeRegex = /^(image|application)\/(jpe?g|png|gif|bmp|pdf)$/
   const isValidImageFormat = mimeTypeRegex.test(upload.mimetype)
 
   if (!isValidImageFormat) {
