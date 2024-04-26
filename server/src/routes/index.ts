@@ -7,6 +7,7 @@ import postRouter from './postRouter'
 import uploadRouter from './uploadRouter'
 import contactRouter from './contactRouter'
 import versionRouter from './versionRouter'
+import applicantRouter from './applicantRouter'
 
 const router = Router()
 
@@ -17,5 +18,6 @@ router.use('/post', postRouter)
 router.use('/upload', uploadRouter)
 router.use('/version', versionRouter)
 router.use('/contact', contactRouter)
+router.use('/applicant', applicantRouter)
 
 export default router

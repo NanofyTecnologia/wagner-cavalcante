@@ -8,7 +8,6 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { api } from '@/lib/axios'
 import Editor from '@/app/(admin)/components/Editor'
 import Container from '@/app/(admin)/components/Container'
-import router from 'next/router'
 
 type FieldValues = {
   id: string

@@ -15,7 +15,6 @@ export default function Footer() {
             <div className="text-center">
               <h5 className="mb-2 font-bold text-white">
                 Monte & Cavalcante Advogados
-                <span className="block font-normal">52.743.726/0001-18</span>
               </h5>
               <p className="mt-4">
                 Navegue pelo nosso site e encontre soluções para suas
@@ -35,31 +34,27 @@ export default function Footer() {
               <h5 className="mb-2 font-bold text-white">Páginas</h5>
               <ul className="space-y-2">
                 <li>
-                  <Link href={'/'} className="hover:underline" rel="">
+                  <Link href={'/'} className="hover:underline">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href={'quem-somos'} className="hover:underline" rel="">
+                  <Link href={'quem-somos'} className="hover:underline">
                     Quem Somos
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href={'trabalhe-conosco'}
-                    className="hover:underline"
-                    rel=""
-                  >
+                  <Link href={'trabalhe-conosco'} className="hover:underline">
                     Trabalhe Conosco
                   </Link>
                 </li>
                 <li>
-                  <Link href={'servicos'} className="hover:underline" rel="">
+                  <Link href={'servicos'} className="hover:underline">
                     Serviços
                   </Link>
                 </li>
                 <li>
-                  <Link href={'contato'} className="hover:underline" rel="">
+                  <Link href={'contato'} className="hover:underline">
                     Contato
                   </Link>
                 </li>
@@ -68,7 +63,9 @@ export default function Footer() {
             <div className="text-center">
               <h5 className="mb-2 font-bold text-white">Informações</h5>
               <ul className="space-y-2">
-                <li>contato@monteecavalcante.adv.br</li>
+                <li className="text-sm lg:text-lg">
+                  contato@monteecavalcante.adv.br
+                </li>
                 <li>
                   <Link
                     className="hover:underline"

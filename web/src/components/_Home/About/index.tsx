@@ -1,6 +1,6 @@
-import Container from '@/components/Container'
 import Image from 'next/image'
-import equip from '@/assets/images/equip.jpg'
+import Container from '@/components/Container'
+import Team from '@/assets/images/monte_cavalcante_equipe.jpg'
 
 export default function About() {
   return (
@@ -10,7 +10,9 @@ export default function About() {
           <div className="mx-auto gap-5 md:grid md:grid-cols-2">
             <div className="flex items-center">
               <Image
-                src={equip}
+                src={Team}
+                width={502}
+                height={384}
                 alt="Imagem da Equipe de Advogados da Monte e Cavalcante"
                 className="mx-auto w-full border-2 border-[#121518] object-cover md:h-96 md:w-full md:border-8"
                 priority

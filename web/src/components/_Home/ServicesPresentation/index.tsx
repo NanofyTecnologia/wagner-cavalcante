@@ -1,7 +1,7 @@
-import Container from '@/components/Container'
 import Link from 'next/link'
 
-import { FcMoneyTransfer, FcServices, FcIdea } from 'react-icons/fc'
+import Container from '@/components/Container'
+import { FcElectricalSensor, FcHome, FcTodoList } from 'react-icons/fc'
 
 import { FaArrowRight } from 'react-icons/fa6'
 
@@ -11,20 +11,20 @@ export default function ServicesPresentation() {
       <section className="mt-20 bg-primary/30 pb-20 pt-12">
         <Container>
           <h2 className="text-center font-garamond text-3xl uppercase italic">
-            Serviços
+            Serviços Oferecidos
           </h2>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl bg-secondary p-4 shadow-md shadow-primary">
               <div className="flex justify-center">
-                <FcMoneyTransfer className="text-5xl" />
+                <FcElectricalSensor className="text-5xl" />
               </div>
 
               <h3 className="mt-5 text-center text-lg font-bold uppercase">
-                administrativos
+                DIREITO MÉDICO E DA SAÚDE
               </h3>
 
               <p className="mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Advocacia especializada em direito médico e da saúde
               </p>
               <div className="flex justify-center">
                 <Link
@@ -37,15 +37,15 @@ export default function ServicesPresentation() {
             </div>
             <div className="rounded-xl bg-secondary p-4 shadow-md shadow-primary">
               <div className="flex justify-center">
-                <FcServices className="text-5xl" />
+                <FcHome className="text-5xl" />
               </div>
 
               <h3 className="mt-5 text-center text-lg font-bold uppercase">
-                terceirização de mão-obra
+                DIREITO CONDOMINIAL
               </h3>
 
               <p className="mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Advocacia especializada em direito condominial
               </p>
               <div className="flex justify-center">
                 <Link
@@ -58,16 +58,14 @@ export default function ServicesPresentation() {
             </div>
             <div className="rounded-xl bg-secondary p-4 shadow-md shadow-primary">
               <div className="flex justify-center">
-                <FcIdea className="text-5xl" />
+                <FcTodoList className="text-5xl" />
               </div>
 
               <h3 className="mt-5 text-center text-lg font-bold uppercase">
-                consultoria e Auditoria
+                DIREITO CÍVEL E PREVIDENCIÁRIO
               </h3>
 
-              <p className="mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
+              <p className="mt-3 text-center">Atuação no seara civil</p>
               <div className="flex justify-center">
                 <Link
                   href={'/servicos'}

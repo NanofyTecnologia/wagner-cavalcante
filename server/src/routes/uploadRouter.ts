@@ -5,6 +5,6 @@ import validateTokenMiddleware from '@/middleware/validateTokenMiddleware'
 
 const uploadRouter = Router()
 
-uploadRouter.post('/', validateTokenMiddleware, uploadController.uploadFile)
+uploadRouter.post('/', uploadController.uploadFile)
 
 export default uploadRouter

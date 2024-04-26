@@ -1,8 +1,8 @@
-import Container from '@/components/Container'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 
-import justice1 from '@/assets/images/justice1.jpg'
+import Container from '@/components/Container'
+import Team from '@/assets/images/trabalhe_conosco.jpg'
 
 export default function WithUs() {
   return (
@@ -32,9 +32,11 @@ export default function WithUs() {
               </div>
             </div>
             <Image
-              src={justice1}
+              width={1000}
+              height={1000}
+              src={Team}
               alt="Justiça"
-              className="hidden overflow-hidden rounded-lg object-cover md:block md:h-72"
+              className="hidden rounded-lg object-cover object-top md:block md:h-72"
               priority
             />
           </div>

@@ -20,6 +20,14 @@ type Job = {
   description: string
   salary?: number
   published: boolean
+  Applicant: {
+    id: string
+    name: string
+    phone: string
+    resume: string
+    email: string
+    createdAt: Date
+  }[]
 }
 
 export default function ListVacancies() {
