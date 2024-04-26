@@ -1,22 +1,17 @@
 import '../globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import type { Metadata } from 'next'
 import {
   Italiana,
   Bellefair,
   Montserrat,
-  Open_Sans as OpenSans,
   EB_Garamond as EbGaramond,
 } from 'next/font/google'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import NotPayScreen from '@/components/not-pay-screen'
-
-const openSans = OpenSans({
-  weight: '400',
-  subsets: ['latin'],
-})
+import { ToastContainer } from 'react-toastify'
 
 const bellefair = Bellefair({
   weight: '400',
@@ -60,6 +55,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
+        <ToastContainer position="bottom-center" />
       </body>
     </html>
   )
