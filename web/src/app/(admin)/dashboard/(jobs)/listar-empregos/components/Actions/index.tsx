@@ -3,9 +3,15 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { BiSolidEditAlt, BiSolidTrashAlt, BiX } from 'react-icons/bi'
+import {
+  BiSolidEditAlt,
+  BiSolidTrashAlt,
+  BiUserCheck,
+  BiX,
+} from 'react-icons/bi'
 
 import { api } from '@/lib/axios'
+import dayjs from 'dayjs'
 
 type Job = {
   id: string
@@ -18,6 +24,14 @@ type Job = {
   description: string
   salary?: number
   published: boolean
+  Applicant: {
+    id: string
+    name: string
+    phone: string
+    resume: string
+    email: string
+    createdAt: Date
+  }[]
 }
 
 type ActionsProps = {
@@ -26,6 +40,7 @@ type ActionsProps = {
 }
 
 export default function Actions({ job, onLoadingJob }: ActionsProps) {
+  const [showModal, setShowModal] = useState(false)
   const [deleteJob, setDeleteJob] = useState<Job | null>(null)
 
   const handleDeleteJob = async (jobId: string) => {
@@ -43,6 +58,13 @@ export default function Actions({ job, onLoadingJob }: ActionsProps) {
     <>
       <td className="p-2">
         <div className="flex items-center gap-4">
+          <button
+            onClick={() => setShowModal(true)}
+            className="block rounded-md bg-blue-500 p-2 transition-colors hover:bg-blue-600"
+          >
+            <BiUserCheck className="text-xl text-white" />
+          </button>
+
           <Link
             href={`/dashboard/editar-emprego/${job.id}`}
             className="block rounded-md bg-yellow-500 p-2 transition-colors hover:bg-yellow-600"
@@ -91,6 +113,69 @@ export default function Actions({ job, onLoadingJob }: ActionsProps) {
                     <BiSolidTrashAlt />
                     Excluir
                   </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showModal && (
+          <div className="fixed left-0 top-0 z-50 h-full w-full overflow-hidden bg-black/60">
+            <div className="mx-auto flex h-full w-full max-w-5xl items-center justify-center">
+              <div className="relative w-full rounded bg-white p-6">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="absolute right-2 top-2 rounded-full p-1 text-2xl hover:bg-neutral-100"
+                >
+                  <BiX />
+                </button>
+                <div className="mb-4  text-neutral-600">
+                  <h1 className="text-lg">Candidatos</h1>
+
+                  <table className="relative w-full overflow-hidden rounded-lg">
+                    <thead>
+                      <tr className="bg-neutral-200">
+                        <th scope="col" className="p-2 text-start">
+                          Nome
+                        </th>
+                        <th scope="col" className="p-2 text-start">
+                          E-mail
+                        </th>
+                        <th scope="col" className="p-2 text-start">
+                          Celular
+                        </th>
+                        <th scope="col" className="p-2 text-start">
+                          Currículo
+                        </th>
+                        <th scope="col" className="p-2 text-start">
+                          Enviado
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {job.Applicant.map((applicant, index) => (
+                        <tr
+                          key={index}
+                          className="border-b border-neutral-300 odd:bg-neutral-50"
+                        >
+                          <td className="p-2">{applicant.name}</td>
+                          <td className="p-2">{applicant.email}</td>
+                          <td className="p-2">{applicant.phone}</td>
+                          <td className="p-2">
+                            <a href={applicant.resume} download target="_blank">
+                              Ver currículo
+                            </a>
+                          </td>
+                          <td className="p-2">
+                            {dayjs(applicant.createdAt).format(
+                              'DD/MM/YYYY - HH:mm',
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

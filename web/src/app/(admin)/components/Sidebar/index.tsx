@@ -7,6 +7,7 @@ import {
   BsFillBriefcaseFill,
   BsTable,
   BsPlusLg,
+  BsPersonCheck,
 } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
 import { destroyCookie } from 'nookies'
