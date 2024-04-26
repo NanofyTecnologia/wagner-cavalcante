@@ -7,6 +7,7 @@ import postRouter from './postRouter'
 import uploadRouter from './uploadRouter'
 import contactRouter from './contactRouter'
 import versionRouter from './versionRouter'
+import applicantRouter from './applicantRouter'
 
 const router = Router()
 
