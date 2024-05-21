@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import Logo from '@/assets/images/logo_text_white.png'
 import PhotoSamuel from '@/assets/images/samuel.jpg'
 
-import { BsHeartPulse, BsHeartPulseFill } from 'react-icons/bs'
+import { BsHeartPulse } from 'react-icons/bs'
 import {
   FaHome,
-  FaBriefcaseMedical,
   FaHandHoldingUsd,
   FaFileMedical,
   FaHospitalAlt,
@@ -18,6 +18,14 @@ export default function LandingPage() {
   return (
     <>
       <div className="relative bg-[url(../assets/images/assinando-papeis.jpg)] bg-cover">
+        <Image
+          src={Logo}
+          width={320}
+          height={320}
+          className="absolute left-6 top-6"
+          alt="monte e cavalcante advocacia"
+        />
+
         <div className="bg-black bg-opacity-60 py-6">
           <main className="mx-auto max-w-7xl py-32">
             <div className="px-12 text-center">
@@ -87,7 +95,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            {/* <div className="rounded-md border border-primary p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaBriefcaseMedical />
               </div>
@@ -95,9 +103,9 @@ export default function LandingPage() {
               <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Indenização Por Erro Médico <br /> / Odontológico
               </p>
-            </div>
+            </div> */}
 
-            <div className="rounded-md border border-primary p-6">
+            {/* <div className="rounded-md border border-primary p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <BsHeartPulseFill />
               </div>
@@ -105,7 +113,7 @@ export default function LandingPage() {
               <p className="mt-2 text-center text-xl font-semibold text-neutral-400">
                 Indenização Por Dano <br /> Estético
               </p>
-            </div>
+            </div> */}
 
             <div className="rounded-md border border-primary p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
