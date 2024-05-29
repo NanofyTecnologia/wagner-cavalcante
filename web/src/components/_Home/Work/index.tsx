@@ -9,7 +9,7 @@ export default function WithUs() {
     <>
       <section className="bg-rangoon pb-20 pt-12 text-white">
         <Container>
-          <h2 className="text-center font-garamond text-3xl uppercase italic">
+          <h2 className="text-center text-3xl uppercase italic">
             Trabalhe Conosco
           </h2>
           <div className="grid grid-cols-1 gap-10 pt-10  md:grid-cols-2">

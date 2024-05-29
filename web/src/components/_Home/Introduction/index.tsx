@@ -21,7 +21,7 @@ export default function Introduction() {
                   className="hidden h-auto max-w-xs rounded-full md:visible md:block"
                 />
                 <div>
-                  <h2 className="font-roboto text-2xl font-bold uppercase text-white sm:text-4xl">
+                  <h2 className="text-2xl font-bold uppercase text-white sm:text-4xl">
                     <p>
                       Defendendo seus direitos com paixão e expertise jurídica.
                     </p>

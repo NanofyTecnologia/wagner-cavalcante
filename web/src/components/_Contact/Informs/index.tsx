@@ -13,9 +13,7 @@ export default function Informs() {
     <>
       <section className="my-20 flex">
         <div className="mx-auto max-w-5xl px-4 lg:px-0 2xl:max-w-6xl">
-          <h2 className="text-center font-garamond text-3xl italic">
-            Meios de contato
-          </h2>
+          <h2 className="text-center text-3xl italic">Meios de contato</h2>
           <div className="mt-4 grid grid-cols-1 justify-center gap-4 md:mt-12 md:grid-cols-2">
             <div className="flex flex-col items-center">
               <FaLocationDot className="rounded-full border-2 border-black px-2 text-4xl" />

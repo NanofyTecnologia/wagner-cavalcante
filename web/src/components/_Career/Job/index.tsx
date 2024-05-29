@@ -85,7 +85,7 @@ export default function Job() {
     <>
       <section className="mb-20 mt-20">
         <Container>
-          <h2 className="text-center font-garamond text-2xl italic">
+          <h2 className="text-center text-2xl italic">
             Confira nossas vagas disponíveis:
           </h2>
 

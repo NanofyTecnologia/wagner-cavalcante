@@ -1,16 +1,17 @@
 'use client'
 
 import Image from 'next/image'
-import { setCookie } from 'nookies'
 import { useRouter } from 'next/navigation'
+import { setCookie } from 'nookies'
+import { toast } from 'react-toastify'
+import { Oval } from 'react-loader-spinner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { api } from '@/lib/axios'
 import useToggle from '@/hooks/useToggle'
 import LayoutImage from '@/assets/dashboard/images/bg_login_1.jpg'
+
 import ModalRocoverPassword from '../components/ModalRecoverPassword'
-import { Oval } from 'react-loader-spinner'
-import { toast } from 'react-toastify'
 
 type FieldValues = {
   email: string
@@ -31,10 +32,12 @@ export default function Login() {
     try {
       const response = await api.post('/sign-in', data)
 
-      setCookie(null, 'token', response.data.token, {
-        maxAge: 60 * 60 * 24 * 30,
-        path: '/',
-      })
+      console.log(response)
+
+      // setCookie(null, 'token', response.data.token, {
+      //   maxAge: 60 * 60 * 24 * 30,
+      //   path: '/',
+      // })
 
       router.push('/dashboard')
     } catch (error: any) {

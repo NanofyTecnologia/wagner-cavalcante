@@ -30,13 +30,11 @@ export default function LandingPage() {
           <main className="mx-auto max-w-7xl py-32">
             <div className="px-12 text-center">
               <div className="text-secondary">
-                <h1 className="font-garamond text-4xl font-semibold uppercase">
+                <h1 className="text-4xl font-semibold uppercase">
                   Monte & Cavalcante
                 </h1>
 
-                <h2 className="font-garamond text-4xl font-semibold uppercase">
-                  Advogados
-                </h2>
+                <h2 className="text-4xl font-semibold uppercase">Advogados</h2>
 
                 <p className="mt-4 text-4xl">
                   Advogado Especializado em Direito de Saúde

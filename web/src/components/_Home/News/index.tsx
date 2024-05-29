@@ -35,9 +35,7 @@ export default function News() {
     <>
       <section className="mt-12 pb-20">
         <Container>
-          <h2 className="text-center font-garamond text-3xl uppercase italic">
-            notícias
-          </h2>
+          <h2 className="text-center text-3xl uppercase italic">notícias</h2>
 
           <div className="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 lg:grid-cols-3">
             {news.length === 0 ? (

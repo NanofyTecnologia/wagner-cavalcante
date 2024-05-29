@@ -34,25 +34,25 @@ export default function AboutPage() {
             <div className="grid grid-cols-4 gap-4 text-white md:gap-48">
               <div className="flex flex-col items-center border-rangoon p-2 text-center">
                 <FaRegCircleCheck className="text-xl text-[#aa9166] md:text-4xl" />
-                <h3 className="mt-2 font-garamond text-sm font-bold italic md:text-xl">
+                <h3 className="mt-2 text-sm font-bold italic md:text-xl">
                   Certificados
                 </h3>
               </div>
               <div className="flex flex-col items-center border-rangoon p-2 text-center">
                 <FaUserTie className="text-xl text-[#aa9166] md:text-4xl" />
-                <h3 className="mt-2 font-garamond text-sm font-bold italic md:text-xl">
+                <h3 className="mt-2 text-sm font-bold italic md:text-xl">
                   <span className="block">Advogados</span>Experientes
                 </h3>
               </div>
               <div className="flex flex-col items-center border-rangoon p-2 text-center">
                 <FaRegThumbsUp className="text-xl text-[#aa9166] md:text-4xl" />
-                <h3 className="mt-2 font-garamond text-sm font-bold italic md:text-xl">
+                <h3 className="mt-2 text-sm font-bold italic md:text-xl">
                   <span className="block">Sucesso</span>em Casos
                 </h3>
               </div>
               <div className="flex flex-col items-center border-rangoon p-2 text-center">
                 <FaRegHandshake className="text-xl text-[#aa9166] md:text-4xl" />
-                <h3 className="mt-2 font-garamond text-sm font-bold italic md:text-xl">
+                <h3 className="mt-2 text-sm font-bold italic md:text-xl">
                   Suporte
                 </h3>
               </div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
       <section className="mx-auto mb-20 mt-20">
         <Container>
-          <h2 className="text-center font-garamond text-3xl italic">
+          <h2 className="text-center text-3xl italic">
             Conheça nossos fundadores
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   alt="Foto de Wagner Cavalcante"
                 />
                 <div className="bg-rangoon p-4 text-center">
-                  <div className="mb-2 font-garamond text-lg font-bold italic text-[#aa9166]">
+                  <div className="mb-2 text-lg font-bold italic text-[#aa9166]">
                     Dr. Wagner Cavcalcante
                   </div>
                   <p className="text-base text-secondary">
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   alt="Foto de Wagner Cavalcante"
                 />
                 <div className="bg-rangoon p-4 text-center">
-                  <div className="mb-2 font-garamond text-lg font-bold italic text-[#aa9166]">
+                  <div className="mb-2 text-lg font-bold italic text-[#aa9166]">
                     Dr. Samuel Monte
                   </div>
                   <p className="text-base text-secondary">

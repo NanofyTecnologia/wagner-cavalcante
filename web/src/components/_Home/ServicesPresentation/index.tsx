@@ -10,7 +10,7 @@ export default function ServicesPresentation() {
     <>
       <section className="mt-20 bg-primary/30 pb-20 pt-12">
         <Container>
-          <h2 className="text-center font-garamond text-3xl uppercase italic">
+          <h2 className="text-center text-3xl uppercase italic">
             Serviços Oferecidos
           </h2>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

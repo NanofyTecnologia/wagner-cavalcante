@@ -19,7 +19,7 @@ export default function About() {
               />
             </div>
             <div className="mx-auto text-justify">
-              <h2 className="mt-6 text-center font-garamond text-3xl font-bold italic md:mt-0">
+              <h2 className="mt-6 text-center text-3xl font-bold italic md:mt-0">
                 Saiba mais sobre nós
               </h2>
               <div className="mx-auto mt-4 text-sm md:mt-6">
