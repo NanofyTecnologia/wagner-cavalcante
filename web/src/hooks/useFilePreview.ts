@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
-export default function useFilePreview(file: any) {
-  const [fileSource, setFileSource] = useState<any | null>(null)
+export default function useFilePreview(
+  file: any,
+): [string, Dispatch<SetStateAction<string>>] {
+  const [fileSource, setFileSource] = useState<string>('')
 
   useEffect(() => {
     if (file && file[0]) {
@@ -11,7 +13,7 @@ export default function useFilePreview(file: any) {
         setFileSource(URL.createObjectURL(file[0]))
       }
     }
-  }, [file, fileSource])
+  }, [file])
 
   return [fileSource, setFileSource]
 }

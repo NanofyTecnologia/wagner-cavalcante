@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { api } from '@/lib/axios'
-import uploadFile from '@/utils/uploadFile'
+import uploadFile from '@/utils/upload-file'
 import useFilePreview from '@/hooks/useFilePreview'
 
 import Editor from '@/app/(admin)/components/Editor'
@@ -40,7 +40,7 @@ export default function UpdatePost({ params }: EditPost) {
       let coverURL = preview
       const regexBlob = /^blob:/
 
-      if (regexBlob.test(preview)) {
+      if (regexBlob.test(preview as string)) {
         coverURL = await uploadFile(data.file)
       }
 
@@ -56,7 +56,7 @@ export default function UpdatePost({ params }: EditPost) {
 
       toast.success('Postagem editada com sucesso!')
 
-      router.push('/dashboard/listar-postagens')
+      router.replace('/dashboard/listar-postagens')
     } catch (error) {
       console.log(error)
     }
@@ -64,7 +64,12 @@ export default function UpdatePost({ params }: EditPost) {
 
   const loadingSelectedPost = async () => {
     try {
-      const response = await api.get(`/post/${params.postId}`)
+      const response = await api.get<{
+        title: string
+        content: string
+        coverURL: string
+        published: string
+      }>(`/post/${params.postId}`)
 
       const { title, content, coverURL, published } = response.data
 
@@ -78,6 +83,10 @@ export default function UpdatePost({ params }: EditPost) {
   useEffect(() => {
     loadingSelectedPost()
   }, [])
+
+  const previewSrc = preview.startsWith('blob:')
+    ? preview
+    : `https://gtreqzctrqppqncegkpw.supabase.co/storage/v1/object/public/monte_cavalcante_bucket/${preview}`
 
   return (
     <>
@@ -128,11 +137,11 @@ export default function UpdatePost({ params }: EditPost) {
               htmlFor="file"
               className="m-0.5 flex h-96 cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 bg-white text-gray-500 hover:bg-gray-100"
             >
-              {preview ? (
+              {previewSrc ? (
                 <Image
                   width={1920}
                   height={1080}
-                  src={preview}
+                  src={previewSrc}
                   className="h-full w-full rounded-md object-cover"
                   alt=""
                 />

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import useFilePreview from '@/hooks/useFilePreview'
-import uploadFile from '@/utils/uploadFile'
+import uploadFile from '@/utils/upload-file'
 import { api } from '@/lib/axios'
 
 import Editor from '@/app/(admin)/components/Editor'
@@ -29,9 +29,17 @@ export default function CreatePost() {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      const coverURL = await uploadFile(data.file)
+      let coverURL = ''
+
+      console.log(data)
+
+      if (data.file && data.file?.length > 0) {
+        coverURL = await uploadFile(data.file)
+      }
 
       delete data.file
+
+      console.log({ ...data, coverURL, published: Boolean(data.published) })
 
       await api.post('/post', {
         ...data,

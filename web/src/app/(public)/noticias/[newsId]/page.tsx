@@ -66,7 +66,10 @@ export default function NewsContent({ params }: NewsContentProps) {
             <Image
               width={1024}
               height={720}
-              src={news?.coverURL}
+              src={
+                'https://gtreqzctrqppqncegkpw.supabase.co/storage/v1/object/public/monte_cavalcante_bucket/' +
+                news?.coverURL
+              }
               alt=""
               className="max-h-[520px] rounded-lg object-cover"
             />

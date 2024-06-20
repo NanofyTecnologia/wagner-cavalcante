@@ -163,7 +163,14 @@ export default function Actions({ job, onLoadingJob }: ActionsProps) {
                           <td className="p-2">{applicant.email}</td>
                           <td className="p-2">{applicant.phone}</td>
                           <td className="p-2">
-                            <a href={applicant.resume} download target="_blank">
+                            <a
+                              href={
+                                'https://gtreqzctrqppqncegkpw.supabase.co/storage/v1/object/public/monte_cavalcante_bucket/' +
+                                applicant.resume
+                              }
+                              download
+                              target="_blank"
+                            >
                               Ver currículo
                             </a>
                           </td>

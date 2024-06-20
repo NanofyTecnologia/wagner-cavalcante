@@ -98,7 +98,10 @@ export default function ListPost() {
                     width={80}
                     height={30}
                     className="mx-auto max-h-12 rounded-md"
-                    src={post.coverURL}
+                    src={
+                      'https://gtreqzctrqppqncegkpw.supabase.co/storage/v1/object/public/monte_cavalcante_bucket/' +
+                      post.coverURL
+                    }
                     alt=""
                   />
                 </td>

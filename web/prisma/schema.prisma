@@ -45,6 +45,7 @@ model Job {
   link        String?
   published   Boolean @default(false)
 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   Applicant Applicant[]

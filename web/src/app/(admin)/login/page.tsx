@@ -1,13 +1,12 @@
 'use client'
 
 import Image from 'next/image'
+import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { setCookie } from 'nookies'
 import { toast } from 'react-toastify'
 import { Oval } from 'react-loader-spinner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { api } from '@/lib/axios'
 import useToggle from '@/hooks/useToggle'
 import LayoutImage from '@/assets/dashboard/images/bg_login_1.jpg'
 
@@ -30,16 +29,12 @@ export default function Login() {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      const response = await api.post('/sign-in', data)
+      await signIn('credentials', {
+        ...data,
+        redirect: false,
+      })
 
-      console.log(response)
-
-      // setCookie(null, 'token', response.data.token, {
-      //   maxAge: 60 * 60 * 24 * 30,
-      //   path: '/',
-      // })
-
-      router.push('/dashboard')
+      router.replace('/dashboard')
     } catch (error: any) {
       if (error.response.data) {
         return toast.error(error.response.data)

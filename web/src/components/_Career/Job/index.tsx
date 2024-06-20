@@ -10,7 +10,7 @@ import { useModal } from '@/hooks/useModal'
 import { BiX } from 'react-icons/bi'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useHookFormMask } from 'use-mask-input'
-import uploadFile from '@/utils/uploadFile'
+import uploadFile from '@/utils/upload-file'
 import { toast } from 'react-toastify'
 
 type Job = {
@@ -180,7 +180,7 @@ export default function Job() {
 
                 <input
                   type="submit"
-                  value="Entrar"
+                  value="Enviar"
                   className="w-full cursor-pointer rounded-md bg-blue-500 p-3 text-white hover:bg-blue-600"
                 />
               </form>

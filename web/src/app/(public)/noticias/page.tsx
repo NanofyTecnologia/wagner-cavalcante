@@ -58,7 +58,10 @@ export default function News() {
                     width={300}
                     height={300}
                     alt={item.title}
-                    src={item.coverURL}
+                    src={
+                      'https://gtreqzctrqppqncegkpw.supabase.co/storage/v1/object/public/monte_cavalcante_bucket/' +
+                      item.coverURL
+                    }
                     className="h-full w-full object-cover"
                   />
                 </div>

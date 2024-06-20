@@ -7,8 +7,8 @@ import {
   BsFillBriefcaseFill,
   BsTable,
   BsPlusLg,
-  BsPersonCheck,
 } from 'react-icons/bs'
+import { signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { destroyCookie } from 'nookies'
 import { ImExit } from 'react-icons/im'
@@ -22,11 +22,7 @@ type SidebarProps = {
   elementRef: React.RefObject<HTMLDivElement>
 }
 
-export default function Sidebar({
-  elementRef,
-  showSidebar,
-  toggleShowSidebar,
-}: SidebarProps) {
+export default function Sidebar({ elementRef, showSidebar }: SidebarProps) {
   const router = useRouter()
 
   const [media, setMedia] = useState<{
@@ -211,7 +207,7 @@ export default function Sidebar({
 
             <div className="flex flex-1 items-end">
               <button
-                onClick={handleLogout}
+                onClick={() => signOut()}
                 className="mt-auto flex w-full items-center justify-center rounded-md bg-red-400 py-2 text-center font-bold uppercase text-white transition-colors hover:bg-red-500"
               >
                 {showSidebar ? 'Sair' : <ImExit className="text-xl" />}
