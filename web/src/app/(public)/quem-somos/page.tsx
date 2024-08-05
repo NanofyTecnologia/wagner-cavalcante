@@ -80,7 +80,7 @@ export default function AboutPage() {
                 />
                 <div className="bg-rangoon p-4 text-center">
                   <div className="mb-2 text-lg font-bold italic text-[#aa9166]">
-                    Dr. Wagner Cavcalcante
+                    Dr. Wagner Cavalcante
                   </div>
                   <p className="text-base text-secondary">
                     Sócio-Fundador e advogado especialista em direito
