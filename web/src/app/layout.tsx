@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Ops! Página em construção...',
-  description: 'by Nanofy Tecnologia Ltda',
+  description: 'Desenvolvido por Nanofy Tecnologia Ltda.',
 }
 
 export default function RootLayout({
