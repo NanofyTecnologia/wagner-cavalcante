@@ -1,8 +1,9 @@
 'use client'
 
-import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
+
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 import { api } from '@/lib/axios'
 
@@ -50,7 +51,7 @@ export default function ResetPassword({ params }: ResetPasswordProps) {
               Redefinir senha
             </h2>
 
-            <label htmlFor="password" className="mb-2 mt-6 block font-bold">
+            <label htmlFor="password" className="mt-6 mb-2 block font-bold">
               Senha
             </label>
             <div className="relative mb-4 flex items-center">
@@ -65,7 +66,7 @@ export default function ResetPassword({ params }: ResetPasswordProps) {
 
             <label
               htmlFor="confirmPassword"
-              className="mb-2 mt-6 block font-bold"
+              className="mt-6 mb-2 block font-bold"
             >
               Confirme sua senha
             </label>
@@ -80,7 +81,7 @@ export default function ResetPassword({ params }: ResetPasswordProps) {
             </div>
             <button
               type="submit"
-              className="w-full rounded-md bg-blue-500 px-14 py-3 font-bold uppercase text-white transition-colors hover:bg-blue-600"
+              className="w-full rounded-md bg-blue-500 px-14 py-3 font-bold text-white uppercase transition-colors hover:bg-blue-600"
             >
               Salvar
             </button>

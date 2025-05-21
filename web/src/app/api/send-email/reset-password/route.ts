@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+
 import jwt from 'jsonwebtoken'
+import nodemailer from 'nodemailer'
 
 import prisma from '@/config/prisma'
 

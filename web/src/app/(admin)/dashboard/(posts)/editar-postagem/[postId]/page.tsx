@@ -1,18 +1,18 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
-import { BsUpload } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
-import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { useEffect, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { BsUpload } from 'react-icons/bs'
+import { toast } from 'react-toastify'
+
+import Container from '@/app/(admin)/components/Container'
+import Editor from '@/app/(admin)/components/Editor'
+import useFilePreview from '@/hooks/useFilePreview'
 import { api } from '@/lib/axios'
 import uploadFile from '@/utils/upload-file'
-import useFilePreview from '@/hooks/useFilePreview'
-
-import Editor from '@/app/(admin)/components/Editor'
-import Container from '@/app/(admin)/components/Container'
 
 type FieldValues = {
   file?: FileList

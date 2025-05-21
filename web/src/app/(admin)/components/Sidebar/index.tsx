@@ -1,6 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+import { signOut } from 'next-auth/react'
+import { destroyCookie } from 'nookies'
+import { useLayoutEffect, useState } from 'react'
 import {
   BsPieChartFill,
   BsChatSquareTextFill,
@@ -8,11 +13,7 @@ import {
   BsTable,
   BsPlusLg,
 } from 'react-icons/bs'
-import { signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import { destroyCookie } from 'nookies'
 import { ImExit } from 'react-icons/im'
-import { useLayoutEffect, useState } from 'react'
 
 import NavMenu from '../NavMenu'
 
@@ -58,7 +59,7 @@ export default function Sidebar({ elementRef, showSidebar }: SidebarProps) {
             ref={elementRef}
             className={`h-full ${
               showSidebar ? 'translate-x-0' : '-translate-x-60'
-            }  fixed left-0 z-20 flex flex-col space-y-3 border-r border-gray-200 bg-white p-4 transition-all`}
+            } fixed left-0 z-20 flex flex-col space-y-3 border-r border-gray-200 bg-white p-4 transition-all`}
           >
             <Link
               href="/dashboard"
@@ -114,7 +115,7 @@ export default function Sidebar({ elementRef, showSidebar }: SidebarProps) {
             <div className="flex flex-1 items-end">
               <button
                 onClick={handleLogout}
-                className="mt-auto flex w-full items-center justify-center rounded-md bg-red-400 py-2 text-center font-bold uppercase text-white transition-colors hover:bg-red-500"
+                className="mt-auto flex w-full items-center justify-center rounded-md bg-red-400 py-2 text-center font-bold text-white uppercase transition-colors hover:bg-red-500"
               >
                 {showSidebar ? 'Sair' : <ImExit className="text-xl" />}
               </button>
@@ -126,7 +127,7 @@ export default function Sidebar({ elementRef, showSidebar }: SidebarProps) {
           <div
             className={`h-full ${
               showSidebar ? 'w-60' : 'w-[70px]'
-            }  flex flex-col space-y-3 border-r border-gray-200 bg-white p-4 transition-all`}
+            } flex flex-col space-y-3 border-r border-gray-200 bg-white p-4 transition-all`}
           >
             <Link
               href="/dashboard"
@@ -208,7 +209,7 @@ export default function Sidebar({ elementRef, showSidebar }: SidebarProps) {
             <div className="flex flex-1 items-end">
               <button
                 onClick={() => signOut()}
-                className="mt-auto flex w-full items-center justify-center rounded-md bg-red-400 py-2 text-center font-bold uppercase text-white transition-colors hover:bg-red-500"
+                className="mt-auto flex w-full items-center justify-center rounded-md bg-red-400 py-2 text-center font-bold text-white uppercase transition-colors hover:bg-red-500"
               >
                 {showSidebar ? 'Sair' : <ImExit className="text-xl" />}
               </button>

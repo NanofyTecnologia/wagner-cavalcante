@@ -1,12 +1,14 @@
 'use client'
 
-import dayjs from 'dayjs'
 import Link from 'next/link'
-import { BiX } from 'react-icons/bi'
-import { useEffect, useState } from 'react'
 
-import { api } from '@/lib/axios'
+import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
+import { BiX } from 'react-icons/bi'
+
 import Container from '@/app/(admin)/components/Container'
+import { api } from '@/lib/axios'
+
 import Actions from './components/Actions'
 
 type Job = {
@@ -56,7 +58,7 @@ export default function ListVacancies() {
 
           <Link
             href="criar-emprego"
-            className="rounded-md bg-blue-500 p-2 uppercase text-white"
+            className="rounded-md bg-blue-500 p-2 text-white uppercase"
           >
             Criar vaga
           </Link>

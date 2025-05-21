@@ -1,14 +1,15 @@
 'use client'
 
 import Image from 'next/image'
-import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { toast } from 'react-toastify'
-import { Oval } from 'react-loader-spinner'
-import { SubmitHandler, useForm } from 'react-hook-form'
 
-import useToggle from '@/hooks/useToggle'
+import { signIn } from 'next-auth/react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { Oval } from 'react-loader-spinner'
+import { toast } from 'react-toastify'
+
 import LayoutImage from '@/assets/dashboard/images/bg_login_1.jpg'
+import useToggle from '@/hooks/useToggle'
 
 import ModalRocoverPassword from '../components/ModalRecoverPassword'
 
@@ -77,7 +78,7 @@ export default function Login() {
 
                   <label
                     htmlFor="password"
-                    className="mb-2 mt-6 block font-bold"
+                    className="mt-6 mb-2 block font-bold"
                   >
                     Senha
                   </label>
@@ -94,14 +95,14 @@ export default function Login() {
                   <button
                     type="button"
                     onClick={toggleShowDropdown}
-                    className="mb-6 mt-3 block text-blue-500 hover:underline"
+                    className="mt-3 mb-6 block text-blue-500 hover:underline"
                   >
                     Esqueceu sua senha?
                   </button>
 
                   <button
                     type="submit"
-                    className="flex w-44 items-center justify-center rounded-md bg-blue-500 px-14 py-3 font-bold uppercase text-white transition-colors hover:bg-blue-600 disabled:bg-blue-300"
+                    className="flex w-44 items-center justify-center rounded-md bg-blue-500 px-14 py-3 font-bold text-white uppercase transition-colors hover:bg-blue-600 disabled:bg-blue-300"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

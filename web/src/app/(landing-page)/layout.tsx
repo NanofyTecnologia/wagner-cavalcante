@@ -1,15 +1,16 @@
-import GoogleTagManager from '@/components/GoogleTagManager'
 import '../globals.css'
 
 import {
+  Montserrat,
   Italiana,
   EB_Garamond as EbGaramond,
-  Montserrat,
 } from 'next/font/google'
 
+import GoogleTagManager from '@/components/GoogleTagManager'
+
 export const metadata = {
-  title: 'Monte & Cavalcante | Direito de saude',
-  description: 'Monte e cavalcante direito de saude',
+  title: 'Wagner Cavalcante Advogados | Direito de saude',
+  description: 'Wagner Cavalcante Advogados-  Direito de Saúde',
 }
 
 const montserrat = Montserrat({

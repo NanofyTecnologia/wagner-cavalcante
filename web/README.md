@@ -1,10 +1,10 @@
 <p align="center">
-  <h2 align="center">Monte e Cavalcante Advogados</h2>
+  <h2 align="center">Wagner Cavalcante Advogados</h2>
 </p>
 
 ### 📌 Sobre
 
-Site da empresa Monte e Cavalcante Advogados
+Site da empresa Wagner Cavalcante Advogados
 
 ### 🛠 Tecnologias
 
@@ -15,6 +15,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Next.js](https://nextjs.org/)
 - [React Icons](https://react-icons.github.io/react-icons/)
+- [Shadcn](https://ui.shadcn.com/)
+- [Hero UI](https://www.heroui.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 
 ### 🎲 Rodando o projeto
@@ -39,4 +41,4 @@ $ npm run dev
 
 Este projeto esta sobe a licença [CC BY-NC](./LICENSE).
 
-Feito com ❤️ por **Fernando Pereira** e **Vinicius Cezar**👋🏽
+Feito com ❤️ por **Nanofy Tecnologia**👋🏽

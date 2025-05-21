@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+
 import { useState } from 'react'
-import { toast } from 'react-toastify'
 import { BiSolidEditAlt, BiSolidTrashAlt, BiX } from 'react-icons/bi'
+import { toast } from 'react-toastify'
 
 import { api } from '@/lib/axios'
 

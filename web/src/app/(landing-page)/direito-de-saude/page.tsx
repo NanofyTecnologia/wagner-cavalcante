@@ -1,8 +1,5 @@
-import Link from 'next/link'
 import Image from 'next/image'
-
-import Logo from '@/assets/images/logo_text_white.png'
-import PhotoSamuel from '@/assets/images/samuel.jpg'
+import Link from 'next/link'
 
 import { BsHeartPulse } from 'react-icons/bs'
 import {
@@ -14,6 +11,9 @@ import {
 } from 'react-icons/fa'
 import { FaSackDollar } from 'react-icons/fa6'
 
+import PhotoWagner from '@/assets/images/wagner_cavalcante.png'
+import Logo from '@/assets/logo/010.png'
+
 export default function LandingPage() {
   return (
     <>
@@ -22,16 +22,16 @@ export default function LandingPage() {
           src={Logo}
           width={320}
           height={320}
-          className="absolute left-6 top-6"
-          alt="monte e cavalcante advocacia"
+          className="absolute top-6 left-6"
+          alt="Wagner Cavalcante Advogados"
         />
 
-        <div className="bg-black bg-opacity-60 py-6">
+        <div className="bg-opacity-60 bg-black py-6">
           <main className="mx-auto max-w-7xl py-32">
             <div className="px-12 text-center">
               <div className="text-secondary">
                 <h1 className="text-4xl font-semibold uppercase">
-                  Monte & Cavalcante
+                  Wagner Cavalcante Advogados
                 </h1>
 
                 <h2 className="text-4xl font-semibold uppercase">Advogados</h2>
@@ -45,7 +45,7 @@ export default function LandingPage() {
                     prefetch={false}
                     target="_blank"
                     href="https://api.whatsapp.com/send/?phone=5582999355766&text&type=phone_number&app_absent=0"
-                    className="mt-6 block rounded-md bg-primary px-16 py-5 text-lg font-semibold uppercase text-white"
+                    className="bg-primary mt-6 block rounded-md px-16 py-5 text-lg font-semibold text-white uppercase"
                   >
                     Fale Com o Advogado Agora
                   </Link>
@@ -58,12 +58,12 @@ export default function LandingPage() {
 
       <section className="bg-neutral-900">
         <div className="mx-auto max-w-7xl px-12 py-8">
-          <h2 className="mb-8 text-center text-xl font-semibold uppercase text-secondary">
+          <h2 className="text-secondary mb-8 text-center text-xl font-semibold uppercase">
             Nossos serviços
           </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <BsHeartPulse />
               </div>
@@ -73,7 +73,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaRegMoneyBillAlt />
               </div>
@@ -83,7 +83,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHome />
               </div>
@@ -113,7 +113,7 @@ export default function LandingPage() {
               </p>
             </div> */}
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHandHoldingUsd />
               </div>
@@ -123,7 +123,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaSackDollar />
               </div>
@@ -133,7 +133,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaFileMedical />
               </div>
@@ -143,7 +143,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-md border border-primary p-6">
+            <div className="border-primary rounded-md border p-6">
               <div className="flex items-center justify-center rounded-full p-4 text-4xl text-white">
                 <FaHospitalAlt />
               </div>
@@ -158,32 +158,23 @@ export default function LandingPage() {
 
       <section>
         <div className="mx-auto max-w-7xl px-12 py-8">
-          <h2 className="text-center text-xl font-semibold uppercase text-black">
+          <h2 className="text-center text-xl font-semibold text-black uppercase">
             Quem é o Advogado?
           </h2>
 
           <div className="my-6 grid grid-cols-1 gap-12 sm:grid-cols-2">
             <div className="h-[460px] rounded-md bg-neutral-500">
               <Image
-                src={PhotoSamuel}
-                alt="doutor samuel monte"
-                className="h-full w-full rounded-md object-cover object-[0%_40%] "
+                src={PhotoWagner}
+                alt="Wagner Cavalcante"
+                className="h-full w-full rounded-md object-cover object-[0%_40%]"
               />
             </div>
 
             <div className="flex flex-col justify-center space-y-4 text-justify text-xl">
               <p>
-                Samuel Monte, estudou na faculdade de Direito da Universidade
-                Federal de Alagoas, especialista em Direito Público e em Direito
-                Médico e da Saúde.
-              </p>
-
-              <p>
-                Advogado desde 2018, é professor universitário, vice presidente
-                da comissão de Direito Médico e da Saúde da OAB AL e atua com
-                foco na relação dos segurados contra planos de saúde, sempre
-                fazendo o melhor para ajudar aqueles que precisam de proteção
-                quando o assunto é direito de saúde.
+                Wagner Cavalcante estudou na faculdade de Direito no estado de
+                Alagoas, especialista em Direito Condominal.
               </p>
 
               <p>
@@ -199,7 +190,7 @@ export default function LandingPage() {
               prefetch={false}
               target="_blank"
               href="https://api.whatsapp.com/send/?phone=5582999355766&text&type=phone_number&app_absent=0"
-              className="mt-6 block rounded-md bg-primary px-16 py-5 text-lg font-semibold uppercase text-white"
+              className="bg-primary mt-6 block rounded-md px-16 py-5 text-lg font-semibold text-white uppercase"
             >
               Fale Com o Advogado Agora
             </Link>

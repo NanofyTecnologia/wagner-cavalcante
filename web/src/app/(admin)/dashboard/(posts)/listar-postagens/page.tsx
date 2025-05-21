@@ -1,13 +1,15 @@
 'use client'
 
-import dayjs from 'dayjs'
-import Link from 'next/link'
 import Image from 'next/image'
-import { BiX } from 'react-icons/bi'
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
-import { api } from '@/lib/axios'
+import dayjs from 'dayjs'
+import { useState, useEffect } from 'react'
+import { BiX } from 'react-icons/bi'
+
 import Container from '@/app/(admin)/components/Container'
+import { api } from '@/lib/axios'
+
 import Actions from './components/Actions'
 
 type Post = {
@@ -46,7 +48,7 @@ export default function ListPost() {
 
           <Link
             href="criar-postagem"
-            className="rounded-md bg-blue-500 p-2 uppercase text-white"
+            className="rounded-md bg-blue-500 p-2 text-white uppercase"
           >
             Criar postagem
           </Link>
@@ -108,7 +110,7 @@ export default function ListPost() {
                 <td className="p-2">{post.title}</td>
                 <td className="p-2">
                   <button
-                    className="rounded-md bg-gray-400 px-2 py-1 text-sm font-bold uppercase text-white transition-colors hover:bg-gray-500"
+                    className="rounded-md bg-gray-400 px-2 py-1 text-sm font-bold text-white uppercase transition-colors hover:bg-gray-500"
                     onClick={() => setPost(post)}
                   >
                     Ver conteúdo

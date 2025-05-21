@@ -1,17 +1,18 @@
 'use client'
 
 import Link from 'next/link'
+
+import dayjs from 'dayjs'
 import { useState } from 'react'
-import { toast } from 'react-toastify'
 import {
   BiSolidEditAlt,
   BiSolidTrashAlt,
   BiUserCheck,
   BiX,
 } from 'react-icons/bi'
+import { toast } from 'react-toastify'
 
 import { api } from '@/lib/axios'
-import dayjs from 'dayjs'
 
 type Job = {
   id: string
@@ -120,16 +121,16 @@ export default function Actions({ job, onLoadingJob }: ActionsProps) {
         )}
 
         {showModal && (
-          <div className="fixed left-0 top-0 z-50 h-full w-full overflow-hidden bg-black/60">
+          <div className="fixed top-0 left-0 z-50 h-full w-full overflow-hidden bg-black/60">
             <div className="mx-auto flex h-full w-full max-w-5xl items-center justify-center">
               <div className="relative w-full rounded bg-white p-6">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="absolute right-2 top-2 rounded-full p-1 text-2xl hover:bg-neutral-100"
+                  className="absolute top-2 right-2 rounded-full p-1 text-2xl hover:bg-neutral-100"
                 >
                   <BiX />
                 </button>
-                <div className="mb-4  text-neutral-600">
+                <div className="mb-4 text-neutral-600">
                   <h1 className="text-lg">Candidatos</h1>
 
                   <table className="relative w-full overflow-hidden rounded-lg">

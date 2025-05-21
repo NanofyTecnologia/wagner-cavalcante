@@ -1,17 +1,18 @@
-import { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
+
+import type { Metadata } from 'next'
 
 import './globals.css'
 
-const poppins = Poppins({
+const montserrat = Montserrat({
   variable: '--font-geist-sans',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: 'Ops! Página em construção...',
-  description: 'Desenvolvido por Nanofy Tecnologia Ltda.',
+  title: 'Wagner Cavalcante Advogados',
+  description: 'by Nanofy Tecnologia Ltda',
 }
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   )
 }

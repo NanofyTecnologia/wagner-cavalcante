@@ -1,13 +1,14 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { toast } from 'react-toastify'
+
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
-import { api } from '@/lib/axios'
-import Editor from '@/app/(admin)/components/Editor'
 import Container from '@/app/(admin)/components/Container'
+import Editor from '@/app/(admin)/components/Editor'
+import { api } from '@/lib/axios'
 
 type FieldValues = {
   id: string

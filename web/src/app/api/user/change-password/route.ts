@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
+
 import { compareSync, hashSync } from 'bcrypt'
 import { getServerSession } from 'next-auth'
 
-import { authOptions } from '@/lib/next-auth'
 import prisma from '@/config/prisma'
+import { authOptions } from '@/lib/next-auth'
 
 export async function PUT(req: NextRequest) {
   const data = await req.json()

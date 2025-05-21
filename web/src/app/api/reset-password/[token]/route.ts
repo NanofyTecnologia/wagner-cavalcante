@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import jwt, { JwtPayload } from 'jsonwebtoken'
+
 import { hashSync } from 'bcrypt'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+
 import prisma from '@/config/prisma'
 
 export async function POST(

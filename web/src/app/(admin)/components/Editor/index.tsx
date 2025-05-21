@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
 import { Editor as TinyEditor } from '@tinymce/tinymce-react'
+import { useRef } from 'react'
 
 export default function Editor({
   content,

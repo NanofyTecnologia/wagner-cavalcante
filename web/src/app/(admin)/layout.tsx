@@ -1,11 +1,13 @@
 import '../globals.css'
 
-import type { Metadata } from 'next'
 import {
   Italiana,
   Open_Sans as OpenSans,
   EB_Garamond as EbGaramond,
 } from 'next/font/google'
+
+import type { Metadata } from 'next'
+
 import Provider from './provider'
 
 const openSans = OpenSans({
@@ -26,8 +28,8 @@ const garamond = EbGaramond({
 })
 
 export const metadata: Metadata = {
-  title: 'Monte e Cavalcante Advogados',
-  description: 'Site da Empresa Monte e Cavalcante Advogados',
+  title: 'Wagner Cavalcante Advogados',
+  description: 'Wagner Cavalcante Advogados',
 }
 
 export default function RootLayout({

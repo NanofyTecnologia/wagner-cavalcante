@@ -1,8 +1,8 @@
 'use client'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { BsX } from 'react-icons/bs'
 import { BiSolidUserCircle, BiShowAlt, BiHide } from 'react-icons/bi'
+import { BsX } from 'react-icons/bs'
 import { Oval } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
 
@@ -47,13 +47,13 @@ export default function Profile() {
   return (
     <>
       <div className="flex h-full items-center justify-center">
-        <div className="w-full max-w-sm rounded-lg bg-rangoon shadow-lg">
+        <div className="bg-rangoon w-full max-w-sm rounded-lg shadow-lg">
           <div className="flex flex-col items-center py-6">
             <BiSolidUserCircle className="text-8xl text-white" />
             <div className="mt-4 flex md:mt-6">
               <button
                 onClick={handleOpen}
-                className="rounded-xl bg-secondary/90 px-4 py-2 hover:bg-secondary/70"
+                className="bg-secondary/90 hover:bg-secondary/70 rounded-xl px-4 py-2"
               >
                 Alterar Senha
               </button>
@@ -63,10 +63,10 @@ export default function Profile() {
       </div>
 
       {showModal && (
-        <div className="absolute left-0 top-0 h-full w-full bg-black/75">
+        <div className="absolute top-0 left-0 h-full w-full bg-black/75">
           <div className="m-auto flex h-full max-w-md items-center">
             <div className="w-full rounded-md bg-white shadow" ref={elementRef}>
-              <h2 className="flex items-center justify-between p-4 font-semibold uppercase text-neutral-400">
+              <h2 className="flex items-center justify-between p-4 font-semibold text-neutral-400 uppercase">
                 Atualizar senha
                 <button onClick={() => toggleShowModal()}>
                   <BsX className="text-3xl hover:text-neutral-500" />
@@ -139,7 +139,7 @@ export default function Profile() {
                   </div>
 
                   <button
-                    className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold uppercase text-white hover:bg-blue-600 disabled:bg-blue-300"
+                    className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold text-white uppercase hover:bg-blue-600 disabled:bg-blue-300"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+
 import { compareSync } from 'bcrypt'
 
 import prisma from '@/config/prisma'

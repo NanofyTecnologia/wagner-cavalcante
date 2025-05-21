@@ -1,8 +1,9 @@
-import { api } from '@/lib/axios'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { BsX } from 'react-icons/bs'
 import { Oval } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
+
+import { api } from '@/lib/axios'
 
 type ModalRecoverPasswordProps = {
   show: boolean
@@ -37,10 +38,10 @@ export default function ModalRocoverPassword({
 
   return (
     <>
-      <div className="absolute left-0 top-0 h-full w-full bg-black/75">
+      <div className="absolute top-0 left-0 h-full w-full bg-black/75">
         <div className="m-auto flex h-full max-w-md items-center">
           <div className="w-full rounded-md bg-white shadow">
-            <h2 className="flex items-center justify-between p-4 font-semibold uppercase text-neutral-400">
+            <h2 className="flex items-center justify-between p-4 font-semibold text-neutral-400 uppercase">
               Recuperar senha
               <button onClick={toggleShow}>
                 <BsX className="text-3xl hover:text-neutral-500" />
@@ -67,7 +68,7 @@ export default function ModalRocoverPassword({
                 />
 
                 <button
-                  className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold uppercase text-white hover:bg-blue-600 disabled:bg-blue-300"
+                  className="flex w-full items-center justify-center rounded-md bg-blue-500 p-3 font-semibold text-white uppercase hover:bg-blue-600 disabled:bg-blue-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -92,7 +93,7 @@ export default function ModalRocoverPassword({
               <div className="mt-4 text-end">
                 <button
                   onClick={toggleShow}
-                  className="rounded-md p-2 uppercase text-blue-400 hover:bg-blue-50"
+                  className="rounded-md p-2 text-blue-400 uppercase hover:bg-blue-50"
                 >
                   Retornar ao login
                 </button>

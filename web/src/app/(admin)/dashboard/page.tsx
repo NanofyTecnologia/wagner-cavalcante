@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { BsPlus, BsTextLeft } from 'react-icons/bs'
 
 export default function Dashboard() {
@@ -16,13 +17,13 @@ export default function Dashboard() {
                 <div className="flex gap-4">
                   <Link
                     href="/dashboard/listar-postagens"
-                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner "
+                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner"
                   >
                     <BsTextLeft className="text-2xl text-sky-700 group-active:scale-95" />
                   </Link>
                   <Link
                     href="/dashboard/criar-postagem"
-                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner "
+                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner"
                   >
                     <BsPlus className="text-2xl text-green-700 group-active:scale-95" />
                   </Link>
@@ -35,13 +36,13 @@ export default function Dashboard() {
                 <div className="flex gap-4">
                   <Link
                     href="/dashboard/listar-empregos"
-                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner "
+                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner"
                   >
                     <BsTextLeft className="text-2xl text-sky-700 group-active:scale-95" />
                   </Link>
                   <Link
                     href="/dashboard/criar-emprego"
-                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner "
+                    className="group block rounded-md border border-gray-100 p-4 shadow-sm active:shadow-inner"
                   >
                     <BsPlus className="text-2xl text-green-700 group-active:scale-95" />
                   </Link>
