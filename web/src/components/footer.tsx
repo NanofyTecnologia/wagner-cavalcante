@@ -31,6 +31,9 @@ const Footer = () => {
             <Mail className="size-6" />
           </Link>
         </div>
+        <div className="text-center text-xs text-white">
+          © 2025 Wagner Cavalcante Advogados. Todos os direitos reservados.
+        </div>
       </div>
     </div>
   )
