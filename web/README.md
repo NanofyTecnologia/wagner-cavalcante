@@ -29,13 +29,20 @@ $ git clone
 $ cd web
 
 # Instale as dependências
-$ npm install
+$ npm install --force
 
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000
 ```
+
+
+```bash
+# Prisma
+$ npx prisma generate dev
+```
+
 
 ### 📝 Licença
 
