@@ -12,8 +12,8 @@ export default function useToggle(
 ] {
   const [value, setValue] = useState(defaultValue)
 
-  const elementRef = useRef<HTMLElement>()
-  const buttonRef = useRef<HTMLElement>()
+  const elementRef = useRef<HTMLElement | null>(null)
+  const buttonRef = useRef<HTMLElement | null>(null)
 
   const toggle = () => setValue(!value)
 

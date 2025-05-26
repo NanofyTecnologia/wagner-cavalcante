@@ -5,12 +5,13 @@ import jwt, { JwtPayload } from 'jsonwebtoken'
 
 import prisma from '@/config/prisma'
 
-export async function POST(
-  req: NextRequest,
-  { params }: { params: { token: string } },
-) {
-  const token = params.token
+export async function POST(req: NextRequest) {
+  const token = req.nextUrl.pathname.split('/').pop()
   const data = await req.json()
+
+  if (!token) {
+    return NextResponse.json({ error: 'TOKEN não encontrado' }, { status: 400 })
+  }
 
   const decoded = jwt.verify(
     token,

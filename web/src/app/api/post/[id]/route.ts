@@ -3,11 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import prisma from '@/config/prisma'
 import supabase from '@/config/supabase'
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function GET(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
 
   const post = await prisma.post.findUnique({
     where: {
@@ -18,12 +15,13 @@ export async function GET(
   return NextResponse.json(post, { status: 200 })
 }
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function PUT(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
   const data = await req.json()
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID não encontrado' }, { status: 400 })
+  }
 
   await removeExistsPostImage(id)
 
@@ -37,11 +35,12 @@ export async function PUT(
   return NextResponse.json(updatedPost, { status: 200 })
 }
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function DELETE(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID não encontrado' }, { status: 400 })
+  }
 
   await removeExistsPostImage(id)
 

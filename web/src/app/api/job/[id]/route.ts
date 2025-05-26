@@ -5,11 +5,8 @@ import { getServerSession } from 'next-auth'
 import prisma from '@/config/prisma'
 import { authOptions } from '@/lib/next-auth'
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function GET(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
   const session = await getServerSession(authOptions)
 
   if (!session?.user.id) {
@@ -25,11 +22,8 @@ export async function GET(
   return NextResponse.json(job, { status: 200 })
 }
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function PUT(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
   const data = await req.json()
   const session = await getServerSession(authOptions)
 
@@ -47,11 +41,9 @@ export async function PUT(
   return NextResponse.json(updatedJob, { status: 200 })
 }
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function DELETE(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
+
   const session = await getServerSession(authOptions)
 
   if (!session?.user.id) {

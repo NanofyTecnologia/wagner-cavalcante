@@ -1,24 +1,20 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
 import { api } from '@/lib/axios'
 
-type ResetPasswordProps = {
-  params: {
-    token: string
-  }
-}
-
 type FieldValues = {
   password: string
   confirmPassword: string
 }
 
-export default function ResetPassword({ params }: ResetPasswordProps) {
+export default function ResetPassword() {
+  const params = useParams()
+  const token = params?.token as string
   const router = useRouter()
 
   const { handleSubmit, register } = useForm<FieldValues>()
@@ -27,7 +23,7 @@ export default function ResetPassword({ params }: ResetPasswordProps) {
     try {
       const { password, confirmPassword } = data
 
-      await api.post(`/reset-password/${params.token}`, {
+      await api.post(`/reset-password/${token}`, {
         password,
         confirmPassword,
       })

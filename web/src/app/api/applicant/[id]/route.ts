@@ -2,11 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import prisma from '@/config/prisma'
 
-export async function POST(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const id = params.id
+export async function POST(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop()
   const data = await req.json()
 
   await prisma.applicant.create({

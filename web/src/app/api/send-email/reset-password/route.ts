@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import jwt from 'jsonwebtoken'
+import { SignOptions, sign } from 'jsonwebtoken'
 import nodemailer from 'nodemailer'
 
 import prisma from '@/config/prisma'
@@ -42,10 +42,18 @@ export async function POST(req: NextRequest) {
   return NextResponse.json('Sucesso', { status: 200 })
 }
 
-async function generateToken(payload: any, expiresIn?: string) {
-  const token = jwt.sign(payload, process.env.JWT_SECRET as string, {
-    expiresIn: expiresIn || '30d',
-  })
+function generateToken(
+  payload: string | object | Buffer,
+  expiresIn: string = '30d',
+): string {
+  const secret = process.env.JWT_SECRET
+  if (!secret) throw new Error('JWT_SECRET não definido.')
 
-  return token
+  return sign(
+    payload,
+    secret as string,
+    {
+      expiresIn,
+    } as SignOptions,
+  )
 }

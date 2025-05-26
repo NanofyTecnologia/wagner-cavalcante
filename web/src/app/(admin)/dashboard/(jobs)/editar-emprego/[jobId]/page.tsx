@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -23,14 +23,9 @@ type FieldValues = {
   published: string
 }
 
-type UpdateJobProps = {
-  params: {
-    jobId: string
-  }
-}
-
-export default function UpdateJob({ params }: UpdateJobProps) {
-  const { jobId } = params
+export default function UpdateJob() {
+  const params = useParams()
+  const jobId = params?.jobId as string
   const router = useRouter()
 
   const [initialContent, setInitialContent] = useState<string>('')

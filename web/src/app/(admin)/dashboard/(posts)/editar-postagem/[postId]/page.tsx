@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -21,13 +21,9 @@ type FieldValues = {
   published: string
 }
 
-type EditPost = {
-  params: {
-    postId: string
-  }
-}
-
-export default function UpdatePost({ params }: EditPost) {
+export default function UpdatePost() {
+  const params = useParams()
+  const postId = params?.postId as string
   const router = useRouter()
 
   const { handleSubmit, register, watch, setValue } = useForm<FieldValues>()
@@ -52,7 +48,7 @@ export default function UpdatePost({ params }: EditPost) {
 
       delete newData.file
 
-      await api.put(`/post/${params.postId}`, newData)
+      await api.put(`/post/${postId}`, newData)
 
       toast.success('Postagem editada com sucesso!')
 
@@ -69,7 +65,7 @@ export default function UpdatePost({ params }: EditPost) {
         content: string
         coverURL: string
         published: string
-      }>(`/post/${params.postId}`)
+      }>(`/post/${postId}`)
 
       const { title, content, coverURL, published } = response.data
 
